@@ -1,0 +1,333 @@
+<!-- html/user.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1F150C">
+  <meta name="description" content="Your Stackly HR employee workspace — attendance, leave, pay and growth in one place.">
+  <title>My Workspace — Stackly HR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body class="dash" data-name="Charlie Chows" data-email="Charlie.Chows@stackly.hr">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
+    <a class="side-brand" href="user.html" aria-label="Reload My Workspace">
+      <img src="../logo.webp" alt="Stackly">
+      <span class="role-chip">USER</span>
+    </a>
+    <p class="side-label">My workspace</p>
+    <nav class="side-nav">
+      <button class="side-link" type="button" data-target="u-home">
+        <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>My Day
+      </button>
+      <button class="side-link" type="button" data-target="u-attendance">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Time &amp; Attendance
+      </button>
+      <button class="side-link" type="button" data-target="u-leave">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Leave Planner
+      </button>
+      <button class="side-link" type="button" data-target="u-pay">
+        <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg>My Pay
+      </button>
+      <button class="side-link" type="button" data-target="u-growth">
+        <svg viewBox="0 0 24 24"><path d="M3 20l6-6 4 4 8-9"/><path d="M15 9h6v6"/></svg>Growth &amp; Learning
+      </button>
+    </nav>
+    <div class="side-bottom">
+      <div class="profile-card">
+        <span class="avatar js-initial"></span>
+        <div><strong class="js-name"></strong><span class="js-email"></span></div>
+      </div>
+      <a class="logout-btn" href="login.html">
+        <svg viewBox="0 0 24 24"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11"/></svg>Log out
+      </a>
+    </div>
+  </aside>
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="dash-header">
+    <div class="header-left">
+      <button class="nav-burger" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+      <p class="hello">Hello, <span class="js-first"></span> 👋<small>Tuesday, 13 October · Have a calm, focused day.</small></p>
+    </div>
+    <div class="header-profile">
+      <span class="email js-email"></span>
+      <span class="avatar js-initial" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main class="dash-main" id="main">
+
+    <!-- 1. My Day -->
+    <section class="data-section" id="u-home" aria-labelledby="u-home-title">
+      <div class="section-title">
+        <div><p class="eyebrow">My day</p><h1 id="u-home-title">Good morning.</h1><p>A quick look at your week, your time and what needs you next.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Clock in ↗</button><button class="btn btn--outline" type="button">Request leave</button></div>
+      </div>
+
+      <div class="grid grid-4">
+        <article class="card card--dark"><p class="kpi-label">Hours this week</p><p class="kpi-value" data-count="32.5" data-suffix="h">0</p><div class="kpi-foot"><span class="muted">of 40h target</span><svg class="spark" data-values="5,6,7,6.5,8,7.5,8"></svg></div></article>
+        <article class="card"><p class="kpi-label">Leave balance</p><p class="kpi-value" data-count="14" data-suffix=" days">0</p><div class="kpi-foot"><span class="trend up">+1.5 accrued</span><svg class="spark" data-values="10,11,11,12,12.5,13,14"></svg></div></article>
+        <article class="card"><p class="kpi-label">Next payday</p><p class="kpi-value" data-count="18" data-suffix=" days">0</p><div class="kpi-foot"><span>31 October</span><svg class="spark" data-values="3,4,4,5,5,6,7"></svg></div></article>
+        <article class="card"><p class="kpi-label">Goals on track</p><p class="kpi-value" data-count="4" data-suffix="/5">0</p><div class="kpi-foot"><span class="trend up">80%</span><svg class="spark" data-values="1,2,2,3,3,4,4"></svg></div></article>
+      </div>
+
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Focus hours</h2><p>Last 7 working days</p></div><button class="card-link" type="button">Full report</button></div>
+          <div class="bar-chart" data-values="7.2,8.1,6.4,8.6,7.9,5.2,8.3" data-labels="Mon,Tue,Wed,Thu,Fri,Mon,Tue" data-unit="h" data-alt="5"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Today</h2><p>Your schedule</p></div></div>
+          <ul class="timeline">
+            <li><small>09:30</small>Team stand-up · Design</li>
+            <li><small>11:00</small>1:1 with Karthik (manager)</li>
+            <li><small>14:00</small>Onboarding buddy session</li>
+            <li><small>16:30</small>Benefits webinar</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-head"><div><h2>Things waiting on you</h2><p>3 open tasks</p></div><button class="card-link" type="button">View all</button></div>
+          <ul class="list">
+            <li><span class="icon-dot">✎</span><div class="grow"><strong>Sign updated remote policy</strong><small>Due Thursday</small></div><span class="pill warn">Pending</span></li>
+            <li><span class="icon-dot">★</span><div class="grow"><strong>Q3 self-review</strong><small>Due 20 October</small></div><span class="pill info">New</span></li>
+            <li><span class="icon-dot">₹</span><div class="grow"><strong>Submit travel claim</strong><small>Chennai client visit</small></div><span class="pill bad">Overdue</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Announcements</h2><p>From People team</p></div></div>
+          <ul class="list">
+            <li><div class="grow"><strong>Diwali office closure</strong><small>31 Oct – 3 Nov · Enjoy the break</small></div></li>
+            <li><div class="grow"><strong>New wellness allowance</strong><small>₹2,000 / month starting November</small></div></li>
+            <li><div class="grow"><strong>Town hall recording is live</strong><small>Watch Q3 highlights</small></div><button class="mini-btn" type="button">Watch</button></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. Time & Attendance -->
+    <section class="data-section" id="u-attendance" aria-labelledby="u-att-title">
+      <div class="section-title">
+        <div><p class="eyebrow">Time &amp; attendance</p><h1 id="u-att-title">Your time, in view.</h1><p>Clock-ins, working patterns and regularisation requests.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Regularise a day</button></div>
+      </div>
+      <div class="grid grid-4">
+        <article class="card"><p class="kpi-label">Present days</p><p class="kpi-value" data-count="19">0</p><div class="kpi-foot"><span>October so far</span><span class="trend up">100%</span></div></article>
+        <article class="card"><p class="kpi-label">Avg. check-in</p><p class="kpi-value">09:24</p><div class="kpi-foot"><span>6 min early</span><svg class="spark" data-values="9,7,8,6,5,6,4"></svg></div></article>
+        <article class="card"><p class="kpi-label">Overtime</p><p class="kpi-value" data-count="6.5" data-suffix="h">0</p><div class="kpi-foot"><span class="trend down">+2h vs Sep</span></div></article>
+        <article class="card card--dark"><p class="kpi-label">Remote days</p><p class="kpi-value" data-count="6">0</p><div class="kpi-foot"><span class="muted">of 8 allowed</span></div></article>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Hours trend</h2><p>Logged vs. scheduled · last 8 weeks</p></div></div>
+          <svg class="line-chart" data-values="38,41,39,42,37,40,43,41" data-values2="40,40,40,40,40,40,40,40" data-labels="W1,W2,W3,W4,W5,W6,W7,W8"></svg>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Work mode</h2><p>This quarter</p></div></div>
+          <div class="donut-wrap">
+            <div class="donut" data-values="62,28,10" data-colors="#412D15,#A0784A,#C9B68E"><div class="donut-center"><strong>62%</strong><span>Office</span></div></div>
+            <ul class="legend"><li><i style="background:#412D15"></i>Office<b>62%</b></li><li><i style="background:#A0784A"></i>Remote<b>28%</b></li><li><i style="background:#C9B68E"></i>Field<b>10%</b></li></ul>
+          </div>
+        </article>
+      </div>
+      <div class="grid grid-12">
+        <article class="card">
+          <div class="card-head"><div><h2>Attendance streak</h2><p>Last 10 weeks</p></div></div>
+          <div class="heatmap" data-seed="11"></div>
+          <div class="heat-legend">Less <span style="background:rgba(31,21,12,.07)"></span><span style="background:rgba(160,120,74,.3)"></span><span style="background:rgba(160,120,74,.6)"></span><span style="background:#412D15"></span> More</div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Recent log</h2><p>Last 5 days</p></div><button class="card-link" type="button">Export</button></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Date</th><th>In</th><th>Out</th><th>Hours</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>13 Oct</td><td>09:18</td><td>—</td><td>Live</td><td><span class="pill info">Working</span></td></tr>
+              <tr><td>12 Oct</td><td>09:31</td><td>18:12</td><td>8h 41m</td><td><span class="pill ok">On time</span></td></tr>
+              <tr><td>09 Oct</td><td>09:52</td><td>18:40</td><td>8h 48m</td><td><span class="pill warn">Late</span></td></tr>
+              <tr><td>08 Oct</td><td>09:20</td><td>17:55</td><td>8h 35m</td><td><span class="pill ok">On time</span></td></tr>
+              <tr><td>07 Oct</td><td>—</td><td>—</td><td>—</td><td><span class="pill bad">Missed punch</span></td></tr>
+            </tbody>
+          </table></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Leave Planner -->
+    <section class="data-section" id="u-leave" aria-labelledby="u-leave-title">
+      <div class="section-title">
+        <div><p class="eyebrow">Leave planner</p><h1 id="u-leave-title">Time to recharge.</h1><p>Balances, upcoming breaks and request history.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Apply for leave ↗</button></div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card card--dark">
+          <div class="card-head"><div><h2>Annual leave used</h2><p>2026 allowance</p></div></div>
+          <div class="ring" data-v="42"><div class="ring-center">42%</div></div>
+          <div class="stat-split"><div><b>24</b><small>Total</small></div><div><b>10</b><small>Used</small></div><div><b>14</b><small>Left</small></div></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Balances</h2><p>By leave type</p></div></div>
+          <div class="progress-list">
+            <div class="progress-row"><div class="meta"><span>Annual</span><span>14 / 24</span></div><div class="track-bar"><div class="fill" data-w="58"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Sick</span><span>6 / 8</span></div><div class="track-bar"><div class="fill" data-w="75"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Casual</span><span>3 / 6</span></div><div class="track-bar"><div class="fill" data-w="50"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Comp-off</span><span>2 / 2</span></div><div class="track-bar"><div class="fill" data-w="100"></div></div></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Upcoming holidays</h2><p>Company calendar</p></div></div>
+          <ul class="list">
+            <li><span class="icon-dot">20</span><div class="grow"><strong>Ayudha Puja</strong><small>Tuesday, 20 Oct</small></div></li>
+            <li><span class="icon-dot">01</span><div class="grow"><strong>Diwali</strong><small>Sunday, 1 Nov</small></div></li>
+            <li><span class="icon-dot">25</span><div class="grow"><strong>Christmas</strong><small>Friday, 25 Dec</small></div></li>
+          </ul>
+        </article>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Days off by month</h2><p>Taken this year</p></div></div>
+          <div class="bar-chart" data-values="0,1,2,0,3,1,0,2,1,0" data-labels="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct" data-unit="d" data-alt="4"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Team away</h2><p>This week</p></div></div>
+          <ul class="list">
+            <li><span class="avatar">KS</span><div class="grow"><strong>Karthik S.</strong><small>Wed – Thu</small></div></li>
+            <li><span class="avatar">MP</span><div class="grow"><strong>Meera P.</strong><small>Friday</small></div></li>
+            <li><span class="avatar">RJ</span><div class="grow"><strong>Rahul J.</strong><small>Remote all week</small></div></li>
+          </ul>
+        </article>
+      </div>
+      <article class="card">
+        <div class="card-head"><div><h2>My requests</h2><p>Recent history</p></div><button class="card-link" type="button">See all</button></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Type</th><th>Dates</th><th>Days</th><th>Approver</th><th>Status</th><th></th></tr></thead>
+          <tbody>
+            <tr><td>Annual</td><td>2 – 6 Nov</td><td>4</td><td>Karthik S.</td><td><span class="pill warn">Awaiting</span></td><td><button class="mini-btn" type="button">Withdraw</button></td></tr>
+            <tr><td>Sick</td><td>14 Sep</td><td>1</td><td>Karthik S.</td><td><span class="pill ok">Approved</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
+            <tr><td>Casual</td><td>22 Aug</td><td>1</td><td>Karthik S.</td><td><span class="pill ok">Approved</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
+          </tbody>
+        </table></div>
+      </article>
+    </section>
+
+    <!-- 4. My Pay -->
+    <section class="data-section" id="u-pay" aria-labelledby="u-pay-title">
+      <div class="section-title">
+        <div><p class="eyebrow">My pay</p><h1 id="u-pay-title">Clear, on time, yours.</h1><p>Payslips, deductions, tax and reimbursements.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Download payslip</button><button class="btn btn--outline" type="button">Tax declaration</button></div>
+      </div>
+      <div class="grid grid-12">
+        <article class="card card--dark">
+          <p class="kpi-label">September net pay</p>
+          <p class="big-num" style="margin:14px 0 6px" data-count="86420" data-prefix="₹">0</p>
+          <p class="muted" style="font-size:.82rem">Credited 30 Sep · HDFC ••4821</p>
+          <div class="stat-split"><div><b>₹1.08L</b><small>Gross</small></div><div><b>₹21.6K</b><small>Deductions</small></div><div><b>₹4.2K</b><small>Claims</small></div></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Net pay trend</h2><p>Last 8 months</p></div></div>
+          <svg class="line-chart" data-values="78,79,79,82,82,84,86,86.4" data-labels="Feb,Mar,Apr,May,Jun,Jul,Aug,Sep"></svg>
+        </article>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-head"><div><h2>Salary breakdown</h2><p>Monthly CTC split</p></div></div>
+          <div class="donut-wrap">
+            <div class="donut" data-values="50,20,12,10,8" data-colors="#1F150C,#412D15,#A0784A,#C9B68E,#6E7B5A"><div class="donut-center"><strong>₹1.08L</strong><span>Gross</span></div></div>
+            <ul class="legend"><li><i style="background:#1F150C"></i>Basic<b>50%</b></li><li><i style="background:#412D15"></i>HRA<b>20%</b></li><li><i style="background:#A0784A"></i>Special<b>12%</b></li><li><i style="background:#C9B68E"></i>PF<b>10%</b></li><li><i style="background:#6E7B5A"></i>Allowances<b>8%</b></li></ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Tax savings</h2><p>FY 2026–27 declarations</p></div></div>
+          <div class="progress-list">
+            <div class="progress-row"><div class="meta"><span>80C investments</span><span>₹1.2L / 1.5L</span></div><div class="track-bar"><div class="fill" data-w="80"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>80D health</span><span>₹18K / 25K</span></div><div class="track-bar"><div class="fill" data-w="72"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>HRA exemption</span><span>₹96K / 1.2L</span></div><div class="track-bar"><div class="fill" data-w="80"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>NPS</span><span>₹20K / 50K</span></div><div class="track-bar"><div class="fill" data-w="40"></div></div></div>
+          </div>
+        </article>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Payslips</h2><p>Download anytime</p></div></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Month</th><th>Gross</th><th>Net</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>September</td><td>₹1,08,000</td><td>₹86,420</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button">PDF</button></td></tr>
+              <tr><td>August</td><td>₹1,08,000</td><td>₹86,010</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button">PDF</button></td></tr>
+              <tr><td>July</td><td>₹1,05,000</td><td>₹84,120</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button">PDF</button></td></tr>
+            </tbody>
+          </table></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Reimbursements</h2><p>Claims in progress</p></div></div>
+          <ul class="list">
+            <li><span class="icon-dot">✈</span><div class="grow"><strong>Travel · Chennai</strong><small>₹3,240</small></div><span class="pill warn">Review</span></li>
+            <li><span class="icon-dot">☕</span><div class="grow"><strong>Client lunch</strong><small>₹960</small></div><span class="pill ok">Approved</span></li>
+            <li><span class="icon-dot">⌂</span><div class="grow"><strong>Internet</strong><small>₹1,000</small></div><span class="pill ok">Paid</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Growth & Learning -->
+    <section class="data-section" id="u-growth" aria-labelledby="u-growth-title">
+      <div class="section-title">
+        <div><p class="eyebrow">Growth &amp; learning</p><h1 id="u-growth-title">Keep getting better.</h1><p>Goals, feedback, skills and courses picked for you.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Browse courses ↗</button></div>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Q4 goals</h2><p>Progress to date</p></div><button class="card-link" type="button">Edit goals</button></div>
+          <div class="progress-list">
+            <div class="progress-row"><div class="meta"><span>Ship onboarding redesign</span><span>85%</span></div><div class="track-bar"><div class="fill" data-w="85"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Mentor one new joiner</span><span>60%</span></div><div class="track-bar"><div class="fill" data-w="60"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Accessibility certification</span><span>45%</span></div><div class="track-bar"><div class="fill" data-w="45"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Reduce design debt by 30%</span><span>70%</span></div><div class="track-bar"><div class="fill" data-w="70"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Run 2 user research sessions</span><span>100%</span></div><div class="track-bar"><div class="fill" data-w="100"></div></div></div>
+          </div>
+        </article>
+        <article class="card card--dark">
+          <div class="card-head"><div><h2>Learning hours</h2><p>Yearly target: 40h</p></div></div>
+          <div class="ring" data-v="68"><div class="ring-center">27h</div></div>
+          <p class="muted" style="text-align:center;font-size:.82rem">68% complete · 13h to go</p>
+        </article>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-head"><div><h2>Skill growth</h2><p>Self + manager rating</p></div></div>
+          <div class="bar-chart" data-values="4.2,3.8,4.5,3.4,4.0,3.6" data-labels="UX,Research,Visual,Code,Comms,Lead" data-alt="1,3,5"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Recent feedback</h2><p>From peers &amp; manager</p></div></div>
+          <ul class="list">
+            <li><span class="avatar">KS</span><div class="grow"><strong>“Great clarity in the onboarding demo.”</strong><small>Karthik S. · 2 days ago</small></div></li>
+            <li><span class="avatar">MP</span><div class="grow"><strong>“Always generous with reviews.”</strong><small>Meera P. · last week</small></div></li>
+            <li><span class="avatar">VN</span><div class="grow"><strong>“Could share research earlier.”</strong><small>Vikram N. · 2 weeks ago</small></div></li>
+          </ul>
+        </article>
+      </div>
+      <article class="card">
+        <div class="card-head"><div><h2>Recommended courses</h2><p>Based on your goals</p></div></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Course</th><th>Length</th><th>Progress</th><th>Status</th><th></th></tr></thead>
+          <tbody>
+            <tr><td>Inclusive Design Foundations</td><td>6h</td><td>45%</td><td><span class="pill warn">In progress</span></td><td><button class="mini-btn" type="button">Continue</button></td></tr>
+            <tr><td>Coaching for New Mentors</td><td>3h</td><td>0%</td><td><span class="pill info">Suggested</span></td><td><button class="mini-btn" type="button">Start</button></td></tr>
+            <tr><td>Data Storytelling</td><td>4h</td><td>100%</td><td><span class="pill ok">Done</span></td><td><button class="mini-btn" type="button">Certificate</button></td></tr>
+          </tbody>
+        </table></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

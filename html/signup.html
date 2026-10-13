@@ -1,0 +1,383 @@
+<!-- html/signup.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1F150C">
+  <meta name="description" content="Create your Stackly HR account.">
+  <title>Create account — Stackly HR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body class="auth-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Back to home chip (top-left, sits over the light form panel) -->
+  <a class="auth-chip" href="../index.html">
+    <span class="auth-chip-arrow" aria-hidden="true">←</span>
+    <span>Back to home</span>
+  </a>
+
+  <main id="main" class="auth-shell">
+    <!-- Form panel (left) -->
+    <section class="auth-panel" aria-labelledby="signup-title">
+      <div class="auth-panel-inner">
+        <a class="auth-panel-logo" href="../index.html" aria-label="Stackly HR home">
+          <img src="../logo.webp" alt="Stackly">
+        </a>
+
+        <div class="auth-head">
+          <p class="eyebrow">Create account</p>
+          <h1 id="signup-title">Start where you are.</h1>
+          <p class="auth-sub">A few details and you're in. No credit card, no rush — set up at your own pace.</p>
+        </div>
+
+        <form class="auth-form" id="signup-form" novalidate autocomplete="off">
+          <div class="form-field">
+            <label for="signup-name">Your name</label>
+            <input id="signup-name" name="signup-name" type="text" placeholder="Aditi Raman"
+                   autocomplete="off" spellcheck="false" required
+                   aria-describedby="signup-name-error">
+            <span class="form-error" id="signup-name-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="signup-email">Work email</label>
+            <input id="signup-email" name="signup-email" type="email" placeholder="you@company.com"
+                   autocomplete="off" autocapitalize="off" spellcheck="false" required
+                   aria-describedby="signup-email-error">
+            <span class="form-error" id="signup-email-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="signup-password">Password</label>
+            <div class="password-wrap">
+              <input id="signup-password" name="signup-password" type="password" placeholder="At least 8 characters"
+                     autocomplete="new-password" required
+                     aria-describedby="signup-password-error">
+              <button class="password-toggle" type="button" aria-label="Show password"
+                      aria-pressed="false" data-toggle="signup-password">
+                <span class="eye" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="password-strength" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <span class="form-error" id="signup-password-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="signup-confirm">Confirm password</label>
+            <div class="password-wrap">
+              <input id="signup-confirm" name="signup-confirm" type="password" placeholder="Repeat your password"
+                     autocomplete="new-password" required
+                     aria-describedby="signup-confirm-error">
+              <button class="password-toggle" type="button" aria-label="Show password"
+                      aria-pressed="false" data-toggle="signup-confirm">
+                <span class="eye" aria-hidden="true"></span>
+              </button>
+            </div>
+            <span class="form-error" id="signup-confirm-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Custom role dropdown -->
+          <div class="form-field">
+            <label id="signup-role-label">Sign up as</label>
+            <div class="custom-select" id="signup-role-select" data-value="" role="presentation">
+              <button class="custom-select-trigger" type="button" aria-haspopup="listbox"
+                      aria-expanded="false" aria-labelledby="signup-role-label">
+                <span class="custom-select-value" data-placeholder="Choose a role">Choose a role</span>
+                <span class="custom-select-caret" aria-hidden="true"></span>
+              </button>
+              <ul class="custom-select-list" role="listbox" aria-labelledby="signup-role-label" tabindex="-1">
+                <li class="custom-select-option" role="option" data-value="user" aria-selected="false">User</li>
+                <li class="custom-select-option" role="option" data-value="admin" aria-selected="false">Admin</li>
+              </ul>
+            </div>
+            <span class="form-error" id="signup-role-error" aria-live="polite"></span>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" id="signup-consent" name="consent" required
+                   aria-describedby="signup-consent-error">
+            <span>I agree to the <a href="404.html">Terms of use</a> and <a href="404.html">Privacy policy</a>.</span>
+          </label>
+          <span class="form-error" id="signup-consent-error" aria-live="polite" style="margin-top:-12px"></span>
+
+          <button class="btn auth-submit" type="submit">Create account <span class="btn__arrow" aria-hidden="true">↗</span></button>
+          <p class="auth-demo-note">Demo form only. No account is created.</p>
+        </form>
+
+        <div class="auth-divider" role="presentation"><span>or</span></div>
+
+        <div class="auth-alts">
+          <a class="auth-alt" href="404.html">
+            <span class="auth-alt-mark" aria-hidden="true">G</span>
+            <span>Continue with Google</span>
+          </a>
+          <a class="auth-alt" href="404.html">
+            <span class="auth-alt-mark" aria-hidden="true">in</span>
+            <span>Continue with LinkedIn</span>
+          </a>
+        </div>
+
+        <p class="auth-switch">Already have an account? <a href="login.html">Sign in <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+
+    <!-- Visual panel (right) -->
+    <aside class="auth-visual" aria-hidden="true">
+      <div class="auth-visual-media">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85" alt="">
+      </div>
+      <div class="auth-visual-inner">
+        <a class="auth-logo" href="../index.html" aria-label="Stackly HR home">
+          <img src="../logo.webp" alt="Stackly">
+        </a>
+        <div class="auth-visual-content">
+          <p class="eyebrow">Welcome to Stackly</p>
+          <blockquote>Every good workplace starts with a team that feels looked after. Let's build one.</blockquote>
+          <ul class="signup-benefits">
+            <li><span aria-hidden="true">✓</span> One connected experience for your people</li>
+            <li><span aria-hidden="true">✓</span> Set up in a few short weeks</li>
+            <li><span aria-hidden="true">✓</span> A real person to help you along the way</li>
+          </ul>
+        </div>
+        <div class="auth-visual-foot">
+          <span>Salem, Tamil Nadu</span>
+          <span>Trusted by 250+ teams</span>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+  (() => {
+    'use strict';
+
+    /* ============================================================
+       Elements
+       ============================================================ */
+    const form           = document.getElementById('signup-form');
+    const nameInput      = document.getElementById('signup-name');
+    const emailInput     = document.getElementById('signup-email');
+    const passwordInput  = document.getElementById('signup-password');
+    const confirmInput   = document.getElementById('signup-confirm');
+    const consentInput   = document.getElementById('signup-consent');
+    const roleSelect     = document.getElementById('signup-role-select');
+
+    /* ============================================================
+       Password visibility toggle (both fields)
+       ============================================================ */
+    document.querySelectorAll('.password-toggle').forEach(btn => {
+      const target = document.getElementById(btn.dataset.toggle);
+      if (!target) return;
+      btn.addEventListener('click', () => {
+        const show = target.type === 'password';
+        target.type = show ? 'text' : 'password';
+        btn.setAttribute('aria-pressed', show ? 'true' : 'false');
+        btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+      });
+    });
+
+    /* ============================================================
+       Password strength meter
+       ============================================================ */
+    const strengthBars = document.querySelectorAll('.password-strength span');
+    const strengthWrap = document.querySelector('.password-strength');
+    function scorePassword(value) {
+      let s = 0;
+      if (value.length >= 8) s++;
+      if (/[A-Z]/.test(value) && /[a-z]/.test(value)) s++;
+      if (/\d/.test(value)) s++;
+      if (/[^A-Za-z0-9]/.test(value)) s++;
+      return s;
+    }
+    passwordInput.addEventListener('input', () => {
+      const score = scorePassword(passwordInput.value);
+      strengthBars.forEach((bar, i) => bar.classList.toggle('is-filled', i < score && passwordInput.value.length > 0));
+      if (strengthWrap) {
+        strengthWrap.dataset.score = score;
+        strengthWrap.setAttribute('aria-hidden', passwordInput.value ? 'false' : 'true');
+      }
+    });
+
+    /* ============================================================
+       Custom dropdown (role selector)
+       ============================================================ */
+    function openCustomSelect(root) {
+      closeAllCustomSelects(root);
+      root.classList.add('is-open');
+      root.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'true');
+      root.querySelector('.custom-select-list').focus({ preventScroll: true });
+    }
+    function closeCustomSelect(root) {
+      root.classList.remove('is-open');
+      root.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'false');
+    }
+    function closeAllCustomSelects(except) {
+      document.querySelectorAll('.custom-select.is-open').forEach(el => {
+        if (el !== except) closeCustomSelect(el);
+      });
+    }
+    function resetCustomSelect(root) {
+      if (!root) return;
+      root.dataset.value = '';
+      const valueEl = root.querySelector('.custom-select-value');
+      valueEl.textContent = valueEl.dataset.placeholder;
+      valueEl.setAttribute('data-placeholder', valueEl.dataset.placeholder);
+      root.querySelectorAll('.custom-select-option').forEach(o => {
+        o.classList.remove('is-selected');
+        o.setAttribute('aria-selected', 'false');
+      });
+      closeCustomSelect(root);
+    }
+
+    document.querySelectorAll('.custom-select').forEach(root => {
+      const trigger = root.querySelector('.custom-select-trigger');
+      const valueEl = root.querySelector('.custom-select-value');
+      const list    = root.querySelector('.custom-select-list');
+      const options = [...root.querySelectorAll('.custom-select-option')];
+      let highlighted = -1;
+
+      function setValue(value) {
+        root.dataset.value = value;
+        const opt = options.find(o => o.dataset.value === value);
+        valueEl.textContent = opt ? opt.textContent : valueEl.dataset.placeholder;
+        valueEl.removeAttribute('data-placeholder');
+        options.forEach(o => {
+          const sel = o === opt;
+          o.classList.toggle('is-selected', sel);
+          o.setAttribute('aria-selected', sel ? 'true' : 'false');
+        });
+        setError(roleSelect, '');
+      }
+      function highlight(idx) {
+        options.forEach((o, i) => o.classList.toggle('is-highlighted', i === idx));
+        highlighted = idx;
+        if (idx >= 0) options[idx].scrollIntoView({ block: 'nearest' });
+      }
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        root.classList.contains('is-open') ? closeCustomSelect(root) : openCustomSelect(root);
+      });
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openCustomSelect(root);
+          const current = options.findIndex(o => o.dataset.value === root.dataset.value);
+          highlight(current >= 0 ? current : 0);
+        }
+      });
+      list.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') { e.preventDefault(); highlight(Math.min(highlighted + 1, options.length - 1)); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); highlight(Math.max(highlighted - 1, 0)); }
+        else if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (highlighted >= 0) { setValue(options[highlighted].dataset.value); closeCustomSelect(root); trigger.focus(); }
+        }
+        else if (e.key === 'Escape') { closeCustomSelect(root); trigger.focus(); }
+        else if (e.key === 'Tab') { closeCustomSelect(root); }
+      });
+      options.forEach((opt, i) => {
+        opt.addEventListener('mouseenter', () => highlight(i));
+        opt.addEventListener('click', () => {
+          setValue(opt.dataset.value);
+          closeCustomSelect(root);
+          trigger.focus();
+        });
+      });
+
+      const obs = new MutationObserver(() => {
+        if (root.classList.contains('is-open')) {
+          const current = options.findIndex(o => o.dataset.value === root.dataset.value);
+          highlight(current >= 0 ? current : 0);
+        }
+      });
+      obs.observe(root, { attributes: true, attributeFilter: ['class'] });
+    });
+    document.addEventListener('click', () => closeAllCustomSelects());
+
+    /* ============================================================
+       Validation
+       ============================================================ */
+    const validateEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+
+    function setError(input, message) {
+      const id = input.getAttribute('aria-describedby');
+      if (!id) return;
+      const errorEl = document.getElementById(id);
+      if (!errorEl) return;
+      errorEl.textContent = message || '';
+      if (message) input.setAttribute('aria-invalid', 'true');
+      else input.removeAttribute('aria-invalid');
+    }
+
+    const rules = [
+      { input: nameInput,     validate: v => v.trim() ? '' : 'Please tell us your name.' },
+      { input: emailInput,    validate: v => v.trim() ? (validateEmail(v) ? '' : 'Enter a valid email address.') : 'Please enter your work email.' },
+      { input: passwordInput, validate: v => v.length >= 8 ? '' : 'Use at least 8 characters.' },
+      { input: confirmInput,  validate: v => v ? (v === passwordInput.value ? '' : 'Passwords do not match.') : 'Please confirm your password.' },
+      { input: consentInput,  validate: (_, input) => input.checked ? '' : 'Please agree to the terms to continue.' }
+    ];
+
+    rules.forEach(({ input, validate }) => {
+      const handler = () => setError(input, validate(input.value, input));
+      input.addEventListener('blur',  handler);
+      input.addEventListener('input', () => { if (input.getAttribute('aria-invalid')) handler(); });
+      input.addEventListener('change',() => { if (input.getAttribute('aria-invalid')) handler(); });
+    });
+    passwordInput.addEventListener('input', () => {
+      if (confirmInput.value && confirmInput.getAttribute('aria-invalid')) {
+        setError(confirmInput, confirmInput.value === passwordInput.value ? '' : 'Passwords do not match.');
+      }
+    });
+
+    /* ============================================================
+       Reset helper
+       ============================================================ */
+    function resetAll() {
+      form.reset();
+      resetCustomSelect(roleSelect);
+      strengthBars.forEach(b => b.classList.remove('is-filled'));
+      if (strengthWrap) { strengthWrap.dataset.score = 0; strengthWrap.setAttribute('aria-hidden', 'true'); }
+      [nameInput, emailInput, passwordInput, confirmInput, consentInput].forEach(i => i.removeAttribute('aria-invalid'));
+      ['signup-name-error','signup-email-error','signup-password-error','signup-confirm-error','signup-role-error','signup-consent-error']
+        .forEach(id => { const el = document.getElementById(id); if (el) el.textContent = ''; });
+    }
+
+    /* ============================================================
+       Submit → redirect to login (nothing is stored)
+       ============================================================ */
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      let firstInvalid = null;
+      rules.forEach(({ input, validate }) => {
+        const msg = validate(input.value, input);
+        setError(input, msg);
+        if (msg && !firstInvalid) firstInvalid = input;
+      });
+      if (!roleSelect.dataset.value) {
+        setError(roleSelect, 'Please choose a role.');
+        if (!firstInvalid) firstInvalid = roleSelect.querySelector('.custom-select-trigger');
+      }
+      if (firstInvalid) { firstInvalid.focus(); return; }
+
+      // Per requirement: signup does NOT store anything.
+      resetAll();
+      window.location.href = 'login.html';
+    });
+
+    /* ============================================================
+       Clear form on browser back (bfcache restore)
+       ============================================================ */
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) resetAll();
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!-- html/admin.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1F150C">
+  <meta name="description" content="Stackly HR admin console — workforce, hiring, payroll and compliance at a glance.">
+  <title>Admin Console — Stackly HR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body class="dash" data-name="Vikram Nair" data-email="vikram.nair@stackly.hr">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
+    <a class="side-brand" href="admin.html" aria-label="Reload Admin Console">
+      <img src="../logo.webp" alt="Stackly">
+      <span class="role-chip">ADMIN</span>
+    </a>
+    <p class="side-label">Admin console</p>
+    <nav class="side-nav">
+      <button class="side-link" type="button" data-target="a-command">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Command Center
+      </button>
+      <button class="side-link" type="button" data-target="a-workforce">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14c3 0 5 2 5 5"/></svg>Workforce
+      </button>
+      <button class="side-link" type="button" data-target="a-hiring">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Talent Acquisition
+      </button>
+      <button class="side-link" type="button" data-target="a-payroll">
+        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Payroll Ops
+      </button>
+      <button class="side-link" type="button" data-target="a-insights">
+        <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>Performance &amp; Compliance
+      </button>
+    </nav>
+    <div class="side-bottom">
+      <div class="profile-card">
+        <span class="avatar js-initial"></span>
+        <div><strong class="js-name"></strong><span class="js-email"></span></div>
+      </div>
+      <a class="logout-btn" href="login.html">
+        <svg viewBox="0 0 24 24"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l-5-5 5-5M5 12h11"/></svg>Log out
+      </a>
+    </div>
+  </aside>
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="dash-header">
+    <div class="header-left">
+      <button class="nav-burger" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+      <p class="hello">Hello, <span class="js-first"></span> 👋<small>Tuesday, 13 October · 248 people, all in one view.</small></p>
+    </div>
+    <div class="header-profile">
+      <span class="email js-email"></span>
+      <span class="avatar js-initial" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main class="dash-main" id="main">
+
+    <!-- 1. Command Center -->
+    <section class="data-section" id="a-command" aria-labelledby="a-cmd-title">
+      <div class="section-title">
+        <div><p class="eyebrow">Command center</p><h1 id="a-cmd-title">Organisation pulse.</h1><p>Headcount, approvals and the health of your teams this month.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Add employee ↗</button><button class="btn btn--outline" type="button">Export report</button></div>
+      </div>
+      <div class="grid grid-4">
+        <article class="card card--dark"><p class="kpi-label">Total headcount</p><p class="kpi-value" data-count="248">0</p><div class="kpi-foot"><span class="muted">+12 this quarter</span><svg class="spark" data-values="210,216,222,228,233,240,248"></svg></div></article>
+        <article class="card"><p class="kpi-label">Attendance today</p><p class="kpi-value" data-count="94.2" data-suffix="%">0</p><div class="kpi-foot"><span class="trend up">+1.8%</span><svg class="spark" data-values="90,91,93,92,94,93,94"></svg></div></article>
+        <article class="card"><p class="kpi-label">Open positions</p><p class="kpi-value" data-count="17">0</p><div class="kpi-foot"><span class="trend down">5 urgent</span><svg class="spark" data-values="9,12,11,14,15,16,17"></svg></div></article>
+        <article class="card"><p class="kpi-label">Attrition (12m)</p><p class="kpi-value" data-count="8.4" data-suffix="%">0</p><div class="kpi-foot"><span class="trend up">−2.1%</span><svg class="spark" data-values="12,11.5,11,10,9.6,9,8.4"></svg></div></article>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Headcount growth</h2><p>Hires vs exits · 2026</p></div><button class="card-link" type="button">Details</button></div>
+          <svg class="line-chart" data-values="210,214,219,222,226,231,236,240,244,248" data-values2="200,203,205,208,210,214,216,219,222,225" data-labels="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct"></svg>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>By department</h2><p>Current split</p></div></div>
+          <div class="donut-wrap">
+            <div class="donut" data-values="86,54,42,38,28" data-colors="#1F150C,#412D15,#A0784A,#C9B68E,#6E7B5A"><div class="donut-center"><strong>248</strong><span>People</span></div></div>
+            <ul class="legend"><li><i style="background:#1F150C"></i>Engineering<b>86</b></li><li><i style="background:#412D15"></i>Operations<b>54</b></li><li><i style="background:#A0784A"></i>Sales<b>42</b></li><li><i style="background:#C9B68E"></i>Design<b>38</b></li><li><i style="background:#6E7B5A"></i>People &amp; Finance<b>28</b></li></ul>
+          </div>
+        </article>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-head"><div><h2>Approval queue</h2><p>9 items need you</p></div><button class="card-link" type="button">Open queue</button></div>
+          <ul class="list">
+            <li><span class="avatar">AR</span><div class="grow"><strong>Charlie Chows · Annual leave</strong><small>2 – 6 Nov · 4 days</small></div><button class="mini-btn" type="button">Approve</button></li>
+            <li><span class="avatar">RJ</span><div class="grow"><strong>Rahul J. · Expense claim</strong><small>₹12,480 · Client travel</small></div><button class="mini-btn" type="button">Review</button></li>
+            <li><span class="avatar">SK</span><div class="grow"><strong>Sneha K. · Role change</strong><small>Designer → Senior Designer</small></div><button class="mini-btn" type="button">Review</button></li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Activity feed</h2><p>Across the org</p></div></div>
+          <ul class="timeline">
+            <li><small>10 min ago</small>3 new candidates moved to final round</li>
+            <li><small>1 hr ago</small>October payroll draft generated</li>
+            <li><small>Yesterday</small>Priya M. joined Engineering</li>
+            <li><small>Yesterday</small>Remote work policy v3 published</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. Workforce -->
+    <section class="data-section" id="a-workforce" aria-labelledby="a-wf-title">
+      <div class="section-title">
+        <div><p class="eyebrow">Workforce</p><h1 id="a-wf-title">Every person, accounted for.</h1><p>Directory, attendance patterns and team composition.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Import CSV</button></div>
+      </div>
+      <div class="grid grid-4">
+        <article class="card"><p class="kpi-label">Present now</p><p class="kpi-value" data-count="214">0</p><div class="kpi-foot"><span>of 248</span><span class="trend up">86%</span></div></article>
+        <article class="card"><p class="kpi-label">On leave</p><p class="kpi-value" data-count="19">0</p><div class="kpi-foot"><span>7 planned this week</span></div></article>
+        <article class="card"><p class="kpi-label">Remote</p><p class="kpi-value" data-count="15">0</p><div class="kpi-foot"><span class="trend up">Policy OK</span></div></article>
+        <article class="card card--dark"><p class="kpi-label">Avg. tenure</p><p class="kpi-value" data-count="3.2" data-suffix=" yrs">0</p><div class="kpi-foot"><span class="muted">+0.4 YoY</span></div></article>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Daily attendance rate</h2><p>Last 10 working days</p></div></div>
+          <div class="bar-chart" data-values="92,94,91,95,93,88,94,96,93,94" data-labels="30,1,2,5,6,7,8,9,12,13" data-unit="%" data-alt="5"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Employment type</h2><p>Contract mix</p></div></div>
+          <div class="donut-wrap">
+            <div class="donut" data-values="198,32,18" data-colors="#412D15,#A0784A,#C9B68E"><div class="donut-center"><strong>80%</strong><span>Full-time</span></div></div>
+            <ul class="legend"><li><i style="background:#412D15"></i>Full-time<b>198</b></li><li><i style="background:#A0784A"></i>Contract<b>32</b></li><li><i style="background:#C9B68E"></i>Interns<b>18</b></li></ul>
+          </div>
+        </article>
+      </div>
+      <div class="grid grid-12">
+        <article class="card">
+          <div class="card-head"><div><h2>Org attendance heat</h2><p>10 weeks</p></div></div>
+          <div class="heatmap" data-seed="42"></div>
+          <div class="heat-legend">Low <span style="background:rgba(31,21,12,.07)"></span><span style="background:rgba(160,120,74,.3)"></span><span style="background:rgba(160,120,74,.6)"></span><span style="background:#412D15"></span> High</div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Directory</h2><p>Recently updated</p></div><button class="card-link" type="button">All employees</button></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Name</th><th>Department</th><th>Location</th><th>Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Charlie Chows</td><td>Design</td><td>Salem</td><td><span class="pill ok">Active</span></td><td><button class="mini-btn" type="button">Profile</button></td></tr>
+              <tr><td>Priya Menon</td><td>Engineering</td><td>Chennai</td><td><span class="pill info">Onboarding</span></td><td><button class="mini-btn" type="button">Profile</button></td></tr>
+              <tr><td>Rahul Joshi</td><td>Sales</td><td>Remote</td><td><span class="pill ok">Active</span></td><td><button class="mini-btn" type="button">Profile</button></td></tr>
+              <tr><td>Meera Pillai</td><td>Operations</td><td>Salem</td><td><span class="pill warn">On leave</span></td><td><button class="mini-btn" type="button">Profile</button></td></tr>
+            </tbody>
+          </table></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Talent Acquisition -->
+    <section class="data-section" id="a-hiring" aria-labelledby="a-hire-title">
+      <div class="section-title">
+        <div><p class="eyebrow">Talent acquisition</p><h1 id="a-hire-title">Build the team ahead.</h1><p>Pipeline health, sources and upcoming interviews.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Post a job ↗</button></div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card card--dark"><p class="kpi-label">Active candidates</p><p class="big-num" style="margin-top:12px" data-count="342">0</p><div class="stat-split"><div><b>17</b><small>Roles</small></div><div><b>24d</b><small>Time to hire</small></div><div><b>86%</b><small>Offer accept</small></div></div></article>
+        <article class="card" style="grid-column: span 2">
+          <div class="card-head"><div><h2>Hiring funnel</h2><p>All open roles · this quarter</p></div></div>
+          <div class="funnel">
+            <div class="funnel-row"><span>Applied</span><div class="track-bar"><div class="fill" data-w="100"></div></div><b>342</b></div>
+            <div class="funnel-row"><span>Screened</span><div class="track-bar"><div class="fill" data-w="58"></div></div><b>198</b></div>
+            <div class="funnel-row"><span>Interviewed</span><div class="track-bar"><div class="fill" data-w="28"></div></div><b>96</b></div>
+            <div class="funnel-row"><span>Offered</span><div class="track-bar"><div class="fill" data-w="8"></div></div><b>28</b></div>
+            <div class="funnel-row"><span>Hired</span><div class="track-bar"><div class="fill" data-w="7"></div></div><b>24</b></div>
+          </div>
+        </article>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-head"><div><h2>Applications per week</h2><p>Last 8 weeks</p></div></div>
+          <svg class="line-chart" data-values="28,34,31,42,39,47,44,52" data-labels="W1,W2,W3,W4,W5,W6,W7,W8"></svg>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Candidate sources</h2><p>Where hires come from</p></div></div>
+          <div class="donut-wrap">
+            <div class="donut" data-values="38,27,20,15" data-colors="#1F150C,#A0784A,#C9B68E,#6E7B5A"><div class="donut-center"><strong>38%</strong><span>Referrals</span></div></div>
+            <ul class="legend"><li><i style="background:#1F150C"></i>Referrals<b>38%</b></li><li><i style="background:#A0784A"></i>LinkedIn<b>27%</b></li><li><i style="background:#C9B68E"></i>Careers page<b>20%</b></li><li><i style="background:#6E7B5A"></i>Agencies<b>15%</b></li></ul>
+          </div>
+        </article>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Open roles</h2><p>Sorted by urgency</p></div><button class="card-link" type="button">Manage roles</button></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Role</th><th>Team</th><th>Pipeline</th><th>Priority</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Senior Backend Engineer</td><td>Engineering</td><td>48</td><td><span class="pill bad">Urgent</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
+              <tr><td>Payroll Specialist</td><td>Finance</td><td>21</td><td><span class="pill warn">High</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
+              <tr><td>Product Designer</td><td>Design</td><td>36</td><td><span class="pill ok">Normal</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
+            </tbody>
+          </table></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Interviews today</h2><p>4 scheduled</p></div></div>
+          <ul class="list">
+            <li><span class="avatar">DS</span><div class="grow"><strong>Divya S.</strong><small>11:00 · Backend · Round 2</small></div></li>
+            <li><span class="avatar">AK</span><div class="grow"><strong>Arjun K.</strong><small>13:30 · Design · Portfolio</small></div></li>
+            <li><span class="avatar">NT</span><div class="grow"><strong>Nisha T.</strong><small>16:00 · Payroll · Final</small></div></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Payroll Ops -->
+    <section class="data-section" id="a-payroll" aria-labelledby="a-pay-title">
+      <div class="section-title">
+        <div><p class="eyebrow">Payroll ops</p><h1 id="a-pay-title">Run payroll with confidence.</h1><p>Cycle status, cost trends, statutory filings and exceptions.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Run October payroll</button><button class="btn btn--outline" type="button">Preview</button></div>
+      </div>
+      <div class="grid grid-4">
+        <article class="card card--dark"><p class="kpi-label">Monthly payroll</p><p class="kpi-value" data-count="2.84" data-prefix="₹" data-suffix=" Cr">0</p><div class="kpi-foot"><span class="muted">October draft</span><svg class="spark" data-values="2.5,2.55,2.6,2.66,2.7,2.78,2.84"></svg></div></article>
+        <article class="card"><p class="kpi-label">Employees paid</p><p class="kpi-value" data-count="246">0</p><div class="kpi-foot"><span>2 on hold</span></div></article>
+        <article class="card"><p class="kpi-label">Exceptions</p><p class="kpi-value" data-count="5">0</p><div class="kpi-foot"><span class="trend down">Needs review</span></div></article>
+        <article class="card"><p class="kpi-label">Cycle readiness</p><p class="kpi-value" data-count="82" data-suffix="%">0</p><div class="kpi-foot"><span class="trend up">On schedule</span></div></article>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Payroll cost by month</h2><p>₹ lakhs · 2026</p></div></div>
+          <div class="bar-chart" data-values="250,252,258,261,266,270,274,278,281,284" data-labels="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct" data-unit="L" data-alt="9"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Cost composition</h2><p>October</p></div></div>
+          <div class="donut-wrap">
+            <div class="donut" data-values="68,14,10,8" data-colors="#1F150C,#412D15,#A0784A,#C9B68E"><div class="donut-center"><strong>₹2.84Cr</strong><span>Total</span></div></div>
+            <ul class="legend"><li><i style="background:#1F150C"></i>Salaries<b>68%</b></li><li><i style="background:#412D15"></i>Benefits<b>14%</b></li><li><i style="background:#A0784A"></i>Statutory<b>10%</b></li><li><i style="background:#C9B68E"></i>Bonuses<b>8%</b></li></ul>
+          </div>
+        </article>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-head"><div><h2>Cycle checklist</h2><p>October run</p></div></div>
+          <div class="progress-list">
+            <div class="progress-row"><div class="meta"><span>Attendance locked</span><span>100%</span></div><div class="track-bar"><div class="fill" data-w="100"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Variable pay inputs</span><span>90%</span></div><div class="track-bar"><div class="fill" data-w="90"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Reimbursements approved</span><span>74%</span></div><div class="track-bar"><div class="fill" data-w="74"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Finance sign-off</span><span>0%</span></div><div class="track-bar"><div class="fill" data-w="2"></div></div></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Statutory filings</h2><p>Upcoming deadlines</p></div></div>
+          <ul class="list">
+            <li><span class="icon-dot">PF</span><div class="grow"><strong>EPF challan</strong><small>Due 15 Oct</small></div><span class="pill warn">2 days</span></li>
+            <li><span class="icon-dot">ESI</span><div class="grow"><strong>ESIC contribution</strong><small>Due 15 Oct</small></div><span class="pill warn">2 days</span></li>
+            <li><span class="icon-dot">TDS</span><div class="grow"><strong>TDS Q2 return</strong><small>Due 31 Oct</small></div><span class="pill ok">Ready</span></li>
+            <li><span class="icon-dot">PT</span><div class="grow"><strong>Professional tax</strong><small>Filed 30 Sep</small></div><span class="pill ok">Filed</span></li>
+          </ul>
+        </article>
+      </div>
+      <article class="card">
+        <div class="card-head"><div><h2>Exceptions to resolve</h2><p>Before running payroll</p></div></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Employee</th><th>Issue</th><th>Impact</th><th>Status</th><th></th></tr></thead>
+          <tbody>
+            <tr><td>Priya Menon</td><td>Bank details missing</td><td>₹92,000</td><td><span class="pill bad">Blocked</span></td><td><button class="mini-btn" type="button">Fix</button></td></tr>
+            <tr><td>Rahul Joshi</td><td>Loss of pay mismatch</td><td>₹4,200</td><td><span class="pill warn">Review</span></td><td><button class="mini-btn" type="button">Review</button></td></tr>
+            <tr><td>Karthik S.</td><td>Arrears from revision</td><td>₹18,500</td><td><span class="pill warn">Review</span></td><td><button class="mini-btn" type="button">Review</button></td></tr>
+          </tbody>
+        </table></div>
+      </article>
+    </section>
+
+    <!-- 5. Performance & Compliance -->
+    <section class="data-section" id="a-insights" aria-labelledby="a-perf-title">
+      <div class="section-title">
+        <div><p class="eyebrow">Performance &amp; compliance</p><h1 id="a-perf-title">Healthy teams, clean records.</h1><p>Review cycles, engagement, policy acknowledgements and audits.</p></div>
+        <div class="title-actions"><button class="btn" type="button">Launch review cycle</button></div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card card--dark">
+          <div class="card-head"><div><h2>Q3 reviews completed</h2><p>Cycle closes 20 Oct</p></div></div>
+          <div class="ring" data-v="73"><div class="ring-center">73%</div></div>
+          <div class="stat-split"><div><b>181</b><small>Done</small></div><div><b>52</b><small>Pending</small></div><div><b>15</b><small>Overdue</small></div></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Rating distribution</h2><p>Q3 calibrated</p></div></div>
+          <div class="bar-chart" data-values="4,18,96,48,15" data-labels="1,2,3,4,5" data-alt="0,4"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Policy acknowledgement</h2><p>Signed by employees</p></div></div>
+          <div class="progress-list">
+            <div class="progress-row"><div class="meta"><span>Code of conduct</span><span>98%</span></div><div class="track-bar"><div class="fill" data-w="98"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>POSH training</span><span>91%</span></div><div class="track-bar"><div class="fill" data-w="91"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Remote policy v3</span><span>64%</span></div><div class="track-bar"><div class="fill" data-w="64"></div></div></div>
+            <div class="progress-row"><div class="meta"><span>Data privacy</span><span>87%</span></div><div class="track-bar"><div class="fill" data-w="87"></div></div></div>
+          </div>
+        </article>
+      </div>
+      <div class="grid grid-21">
+        <article class="card">
+          <div class="card-head"><div><h2>Engagement score</h2><p>eNPS vs industry benchmark</p></div></div>
+          <svg class="line-chart" data-values="32,35,34,38,41,40,44,47" data-values2="30,30,31,31,32,32,33,33" data-labels="Q1'25,Q2,Q3,Q4,Q1'26,Q2,Q3,Q4"></svg>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><h2>Audit trail</h2><p>Recent admin actions</p></div><button class="card-link" type="button">Full log</button></div>
+          <ul class="timeline">
+            <li><small>Today, 09:12</small>Salary revision approved · Karthik S.</li>
+            <li><small>Yesterday</small>Role permissions updated · Finance</li>
+            <li><small>11 Oct</small>Background check cleared · Priya M.</li>
+            <li><small>10 Oct</small>Policy v3 published to all</li>
+          </ul>
+        </article>
+      </div>
+      <article class="card">
+        <div class="card-head"><div><h2>Compliance watchlist</h2><p>Items requiring action</p></div></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Item</th><th>Owner</th><th>Due</th><th>Risk</th><th></th></tr></thead>
+          <tbody>
+            <tr><td>Labour law register update</td><td>People Ops</td><td>18 Oct</td><td><span class="pill bad">High</span></td><td><button class="mini-btn" type="button">Assign</button></td></tr>
+            <tr><td>Contract renewals (6)</td><td>Legal</td><td>25 Oct</td><td><span class="pill warn">Medium</span></td><td><button class="mini-btn" type="button">Open</button></td></tr>
+            <tr><td>Annual fire-safety drill</td><td>Facilities</td><td>5 Nov</td><td><span class="pill ok">Low</span></td><td><button class="mini-btn" type="button">Schedule</button></td></tr>
+          </tbody>
+        </table></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
