@@ -16,10 +16,13 @@
 
   <!-- Sidebar -->
   <aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
-    <a class="side-brand" href="user.html" aria-label="Reload My Workspace">
-      <img src="../logo.webp" alt="Stackly">
-      <span class="role-chip">USER</span>
-    </a>
+    <div class="side-top">
+      <a class="side-brand" href="user.html" aria-label="Reload My Workspace">
+        <img src="../logo.webp" alt="Stackly">
+        <span class="role-chip">USER</span>
+      </a>
+      <button class="side-close" type="button" aria-label="Close navigation">×</button>
+    </div>
     <p class="side-label">My workspace</p>
     <nav class="side-nav">
       <button class="side-link" type="button" data-target="u-home">
@@ -56,10 +59,10 @@
       <button class="nav-burger" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
       <p class="hello">Hello, <span class="js-first"></span> 👋<small>Tuesday, 13 October · Have a calm, focused day.</small></p>
     </div>
-    <div class="header-profile">
+    <a class="header-profile" href="../404.html" aria-label="View profile">
       <span class="email js-email"></span>
       <span class="avatar js-initial" aria-hidden="true"></span>
-    </div>
+    </a>
   </header>
 
   <main class="dash-main" id="main">
@@ -68,7 +71,7 @@
     <section class="data-section" id="u-home" aria-labelledby="u-home-title">
       <div class="section-title">
         <div><p class="eyebrow">My day</p><h1 id="u-home-title">Good morning.</h1><p>A quick look at your week, your time and what needs you next.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Clock in ↗</button><button class="btn btn--outline" type="button">Request leave</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Clock in ↗</button><button class="btn btn--outline" type="button" onclick="window.location.href='../404.html'">Request leave</button></div>
       </div>
 
       <div class="grid grid-4">
@@ -80,7 +83,7 @@
 
       <div class="grid grid-21">
         <article class="card">
-          <div class="card-head"><div><h2>Focus hours</h2><p>Last 7 working days</p></div><button class="card-link" type="button">Full report</button></div>
+          <div class="card-head"><div><h2>Focus hours</h2><p>Last 7 working days</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">Full report</button></div>
           <div class="bar-chart" data-values="7.2,8.1,6.4,8.6,7.9,5.2,8.3" data-labels="Mon,Tue,Wed,Thu,Fri,Mon,Tue" data-unit="h" data-alt="5"></div>
         </article>
         <article class="card">
@@ -96,7 +99,7 @@
 
       <div class="grid grid-2">
         <article class="card">
-          <div class="card-head"><div><h2>Things waiting on you</h2><p>3 open tasks</p></div><button class="card-link" type="button">View all</button></div>
+          <div class="card-head"><div><h2>Things waiting on you</h2><p>3 open tasks</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">View all</button></div>
           <ul class="list">
             <li><span class="icon-dot">✎</span><div class="grow"><strong>Sign updated remote policy</strong><small>Due Thursday</small></div><span class="pill warn">Pending</span></li>
             <li><span class="icon-dot">★</span><div class="grow"><strong>Q3 self-review</strong><small>Due 20 October</small></div><span class="pill info">New</span></li>
@@ -108,7 +111,7 @@
           <ul class="list">
             <li><div class="grow"><strong>Diwali office closure</strong><small>31 Oct – 3 Nov · Enjoy the break</small></div></li>
             <li><div class="grow"><strong>New wellness allowance</strong><small>₹2,000 / month starting November</small></div></li>
-            <li><div class="grow"><strong>Town hall recording is live</strong><small>Watch Q3 highlights</small></div><button class="mini-btn" type="button">Watch</button></li>
+            <li><div class="grow"><strong>Town hall recording is live</strong><small>Watch Q3 highlights</small></div><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Watch</button></li>
           </ul>
         </article>
       </div>
@@ -118,7 +121,7 @@
     <section class="data-section" id="u-attendance" aria-labelledby="u-att-title">
       <div class="section-title">
         <div><p class="eyebrow">Time &amp; attendance</p><h1 id="u-att-title">Your time, in view.</h1><p>Clock-ins, working patterns and regularisation requests.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Regularise a day</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Regularise a day</button></div>
       </div>
       <div class="grid grid-4">
         <article class="card"><p class="kpi-label">Present days</p><p class="kpi-value" data-count="19">0</p><div class="kpi-foot"><span>October so far</span><span class="trend up">100%</span></div></article>
@@ -146,7 +149,7 @@
           <div class="heat-legend">Less <span style="background:rgba(31,21,12,.07)"></span><span style="background:rgba(160,120,74,.3)"></span><span style="background:rgba(160,120,74,.6)"></span><span style="background:#412D15"></span> More</div>
         </article>
         <article class="card">
-          <div class="card-head"><div><h2>Recent log</h2><p>Last 5 days</p></div><button class="card-link" type="button">Export</button></div>
+          <div class="card-head"><div><h2>Recent log</h2><p>Last 5 days</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">Export</button></div>
           <div class="table-wrap"><table>
             <thead><tr><th>Date</th><th>In</th><th>Out</th><th>Hours</th><th>Status</th></tr></thead>
             <tbody>
@@ -165,7 +168,7 @@
     <section class="data-section" id="u-leave" aria-labelledby="u-leave-title">
       <div class="section-title">
         <div><p class="eyebrow">Leave planner</p><h1 id="u-leave-title">Time to recharge.</h1><p>Balances, upcoming breaks and request history.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Apply for leave ↗</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Apply for leave ↗</button></div>
       </div>
       <div class="grid grid-3">
         <article class="card card--dark">
@@ -206,13 +209,13 @@
         </article>
       </div>
       <article class="card">
-        <div class="card-head"><div><h2>My requests</h2><p>Recent history</p></div><button class="card-link" type="button">See all</button></div>
+        <div class="card-head"><div><h2>My requests</h2><p>Recent history</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">See all</button></div>
         <div class="table-wrap"><table>
           <thead><tr><th>Type</th><th>Dates</th><th>Days</th><th>Approver</th><th>Status</th><th></th></tr></thead>
           <tbody>
-            <tr><td>Annual</td><td>2 – 6 Nov</td><td>4</td><td>Karthik S.</td><td><span class="pill warn">Awaiting</span></td><td><button class="mini-btn" type="button">Withdraw</button></td></tr>
-            <tr><td>Sick</td><td>14 Sep</td><td>1</td><td>Karthik S.</td><td><span class="pill ok">Approved</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
-            <tr><td>Casual</td><td>22 Aug</td><td>1</td><td>Karthik S.</td><td><span class="pill ok">Approved</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
+            <tr><td>Annual</td><td>2 – 6 Nov</td><td>4</td><td>Karthik S.</td><td><span class="pill warn">Awaiting</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Withdraw</button></td></tr>
+            <tr><td>Sick</td><td>14 Sep</td><td>1</td><td>Karthik S.</td><td><span class="pill ok">Approved</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">View</button></td></tr>
+            <tr><td>Casual</td><td>22 Aug</td><td>1</td><td>Karthik S.</td><td><span class="pill ok">Approved</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">View</button></td></tr>
           </tbody>
         </table></div>
       </article>
@@ -222,7 +225,7 @@
     <section class="data-section" id="u-pay" aria-labelledby="u-pay-title">
       <div class="section-title">
         <div><p class="eyebrow">My pay</p><h1 id="u-pay-title">Clear, on time, yours.</h1><p>Payslips, deductions, tax and reimbursements.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Download payslip</button><button class="btn btn--outline" type="button">Tax declaration</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Download payslip</button><button class="btn btn--outline" type="button" onclick="window.location.href='../404.html'">Tax declaration</button></div>
       </div>
       <div class="grid grid-12">
         <article class="card card--dark">
@@ -260,9 +263,9 @@
           <div class="table-wrap"><table>
             <thead><tr><th>Month</th><th>Gross</th><th>Net</th><th>Status</th><th></th></tr></thead>
             <tbody>
-              <tr><td>September</td><td>₹1,08,000</td><td>₹86,420</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button">PDF</button></td></tr>
-              <tr><td>August</td><td>₹1,08,000</td><td>₹86,010</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button">PDF</button></td></tr>
-              <tr><td>July</td><td>₹1,05,000</td><td>₹84,120</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button">PDF</button></td></tr>
+              <tr><td>September</td><td>₹1,08,000</td><td>₹86,420</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">PDF</button></td></tr>
+              <tr><td>August</td><td>₹1,08,000</td><td>₹86,010</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">PDF</button></td></tr>
+              <tr><td>July</td><td>₹1,05,000</td><td>₹84,120</td><td><span class="pill ok">Paid</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">PDF</button></td></tr>
             </tbody>
           </table></div>
         </article>
@@ -281,11 +284,11 @@
     <section class="data-section" id="u-growth" aria-labelledby="u-growth-title">
       <div class="section-title">
         <div><p class="eyebrow">Growth &amp; learning</p><h1 id="u-growth-title">Keep getting better.</h1><p>Goals, feedback, skills and courses picked for you.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Browse courses ↗</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Browse courses ↗</button></div>
       </div>
       <div class="grid grid-21">
         <article class="card">
-          <div class="card-head"><div><h2>Q4 goals</h2><p>Progress to date</p></div><button class="card-link" type="button">Edit goals</button></div>
+          <div class="card-head"><div><h2>Q4 goals</h2><p>Progress to date</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">Edit goals</button></div>
           <div class="progress-list">
             <div class="progress-row"><div class="meta"><span>Ship onboarding redesign</span><span>85%</span></div><div class="track-bar"><div class="fill" data-w="85"></div></div></div>
             <div class="progress-row"><div class="meta"><span>Mentor one new joiner</span><span>60%</span></div><div class="track-bar"><div class="fill" data-w="60"></div></div></div>
@@ -319,9 +322,9 @@
         <div class="table-wrap"><table>
           <thead><tr><th>Course</th><th>Length</th><th>Progress</th><th>Status</th><th></th></tr></thead>
           <tbody>
-            <tr><td>Inclusive Design Foundations</td><td>6h</td><td>45%</td><td><span class="pill warn">In progress</span></td><td><button class="mini-btn" type="button">Continue</button></td></tr>
-            <tr><td>Coaching for New Mentors</td><td>3h</td><td>0%</td><td><span class="pill info">Suggested</span></td><td><button class="mini-btn" type="button">Start</button></td></tr>
-            <tr><td>Data Storytelling</td><td>4h</td><td>100%</td><td><span class="pill ok">Done</span></td><td><button class="mini-btn" type="button">Certificate</button></td></tr>
+            <tr><td>Inclusive Design Foundations</td><td>6h</td><td>45%</td><td><span class="pill warn">In progress</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Continue</button></td></tr>
+            <tr><td>Coaching for New Mentors</td><td>3h</td><td>0%</td><td><span class="pill info">Suggested</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Start</button></td></tr>
+            <tr><td>Data Storytelling</td><td>4h</td><td>100%</td><td><span class="pill ok">Done</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Certificate</button></td></tr>
           </tbody>
         </table></div>
       </article>

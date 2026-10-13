@@ -82,6 +82,9 @@
 }
 
 /* Contact-specific form tweaks layered on top of global form-field */
+.contact-form .form-field {
+  align-content: start;
+}
 .contact-form .form-field label {
   font-size: .82rem;
   font-weight: 700;
@@ -90,6 +93,7 @@
 .contact-form .form-field input,
 .contact-form .form-field textarea,
 .contact-form .form-field select {
+  font: inherit;
   width: 100%;
   min-height: 52px;
   padding: 14px 15px;
@@ -100,6 +104,10 @@
   outline-offset: 2px;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
   appearance: none;
+}
+.contact-form .form-field input,
+.contact-form .form-field select {
+  height: 52px;
 }
 .contact-form .form-field select {
   background-image: linear-gradient(45deg, transparent 50%, var(--color-espresso) 50%),

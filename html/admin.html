@@ -16,10 +16,13 @@
 
   <!-- Sidebar -->
   <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
-    <a class="side-brand" href="admin.html" aria-label="Reload Admin Console">
-      <img src="../logo.webp" alt="Stackly">
-      <span class="role-chip">ADMIN</span>
-    </a>
+    <div class="side-top">
+      <a class="side-brand" href="admin.html" aria-label="Reload Admin Console">
+        <img src="../logo.webp" alt="Stackly">
+        <span class="role-chip">ADMIN</span>
+      </a>
+      <button class="side-close" type="button" aria-label="Close navigation">×</button>
+    </div>
     <p class="side-label">Admin console</p>
     <nav class="side-nav">
       <button class="side-link" type="button" data-target="a-command">
@@ -56,10 +59,10 @@
       <button class="nav-burger" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
       <p class="hello">Hello, <span class="js-first"></span> 👋<small>Tuesday, 13 October · 248 people, all in one view.</small></p>
     </div>
-    <div class="header-profile">
+    <a class="header-profile" href="../404.html" aria-label="View profile">
       <span class="email js-email"></span>
       <span class="avatar js-initial" aria-hidden="true"></span>
-    </div>
+    </a>
   </header>
 
   <main class="dash-main" id="main">
@@ -68,7 +71,7 @@
     <section class="data-section" id="a-command" aria-labelledby="a-cmd-title">
       <div class="section-title">
         <div><p class="eyebrow">Command center</p><h1 id="a-cmd-title">Organisation pulse.</h1><p>Headcount, approvals and the health of your teams this month.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Add employee ↗</button><button class="btn btn--outline" type="button">Export report</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Add employee ↗</button><button class="btn btn--outline" type="button" onclick="window.location.href='../404.html'">Export report</button></div>
       </div>
       <div class="grid grid-4">
         <article class="card card--dark"><p class="kpi-label">Total headcount</p><p class="kpi-value" data-count="248">0</p><div class="kpi-foot"><span class="muted">+12 this quarter</span><svg class="spark" data-values="210,216,222,228,233,240,248"></svg></div></article>
@@ -78,7 +81,7 @@
       </div>
       <div class="grid grid-21">
         <article class="card">
-          <div class="card-head"><div><h2>Headcount growth</h2><p>Hires vs exits · 2026</p></div><button class="card-link" type="button">Details</button></div>
+          <div class="card-head"><div><h2>Headcount growth</h2><p>Hires vs exits · 2026</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">Details</button></div>
           <svg class="line-chart" data-values="210,214,219,222,226,231,236,240,244,248" data-values2="200,203,205,208,210,214,216,219,222,225" data-labels="Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct"></svg>
         </article>
         <article class="card">
@@ -91,11 +94,11 @@
       </div>
       <div class="grid grid-2">
         <article class="card">
-          <div class="card-head"><div><h2>Approval queue</h2><p>9 items need you</p></div><button class="card-link" type="button">Open queue</button></div>
+          <div class="card-head"><div><h2>Approval queue</h2><p>9 items need you</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">Open queue</button></div>
           <ul class="list">
-            <li><span class="avatar">AR</span><div class="grow"><strong>Charlie Chows · Annual leave</strong><small>2 – 6 Nov · 4 days</small></div><button class="mini-btn" type="button">Approve</button></li>
-            <li><span class="avatar">RJ</span><div class="grow"><strong>Rahul J. · Expense claim</strong><small>₹12,480 · Client travel</small></div><button class="mini-btn" type="button">Review</button></li>
-            <li><span class="avatar">SK</span><div class="grow"><strong>Sneha K. · Role change</strong><small>Designer → Senior Designer</small></div><button class="mini-btn" type="button">Review</button></li>
+            <li><span class="avatar">AR</span><div class="grow"><strong>Charlie Chows · Annual leave</strong><small>2 – 6 Nov · 4 days</small></div><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Approve</button></li>
+            <li><span class="avatar">RJ</span><div class="grow"><strong>Rahul J. · Expense claim</strong><small>₹12,480 · Client travel</small></div><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Review</button></li>
+            <li><span class="avatar">SK</span><div class="grow"><strong>Sneha K. · Role change</strong><small>Designer → Senior Designer</small></div><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Review</button></li>
           </ul>
         </article>
         <article class="card">
@@ -114,7 +117,7 @@
     <section class="data-section" id="a-workforce" aria-labelledby="a-wf-title">
       <div class="section-title">
         <div><p class="eyebrow">Workforce</p><h1 id="a-wf-title">Every person, accounted for.</h1><p>Directory, attendance patterns and team composition.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Import CSV</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Import CSV</button></div>
       </div>
       <div class="grid grid-4">
         <article class="card"><p class="kpi-label">Present now</p><p class="kpi-value" data-count="214">0</p><div class="kpi-foot"><span>of 248</span><span class="trend up">86%</span></div></article>
@@ -142,14 +145,14 @@
           <div class="heat-legend">Low <span style="background:rgba(31,21,12,.07)"></span><span style="background:rgba(160,120,74,.3)"></span><span style="background:rgba(160,120,74,.6)"></span><span style="background:#412D15"></span> High</div>
         </article>
         <article class="card">
-          <div class="card-head"><div><h2>Directory</h2><p>Recently updated</p></div><button class="card-link" type="button">All employees</button></div>
+          <div class="card-head"><div><h2>Directory</h2><p>Recently updated</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">All employees</button></div>
           <div class="table-wrap"><table>
             <thead><tr><th>Name</th><th>Department</th><th>Location</th><th>Status</th><th></th></tr></thead>
             <tbody>
-              <tr><td>Charlie Chows</td><td>Design</td><td>Salem</td><td><span class="pill ok">Active</span></td><td><button class="mini-btn" type="button">Profile</button></td></tr>
-              <tr><td>Priya Menon</td><td>Engineering</td><td>Chennai</td><td><span class="pill info">Onboarding</span></td><td><button class="mini-btn" type="button">Profile</button></td></tr>
-              <tr><td>Rahul Joshi</td><td>Sales</td><td>Remote</td><td><span class="pill ok">Active</span></td><td><button class="mini-btn" type="button">Profile</button></td></tr>
-              <tr><td>Meera Pillai</td><td>Operations</td><td>Salem</td><td><span class="pill warn">On leave</span></td><td><button class="mini-btn" type="button">Profile</button></td></tr>
+              <tr><td>Charlie Chows</td><td>Design</td><td>Salem</td><td><span class="pill ok">Active</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Profile</button></td></tr>
+              <tr><td>Priya Menon</td><td>Engineering</td><td>Chennai</td><td><span class="pill info">Onboarding</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Profile</button></td></tr>
+              <tr><td>Rahul Joshi</td><td>Sales</td><td>Remote</td><td><span class="pill ok">Active</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Profile</button></td></tr>
+              <tr><td>Meera Pillai</td><td>Operations</td><td>Salem</td><td><span class="pill warn">On leave</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Profile</button></td></tr>
             </tbody>
           </table></div>
         </article>
@@ -160,7 +163,7 @@
     <section class="data-section" id="a-hiring" aria-labelledby="a-hire-title">
       <div class="section-title">
         <div><p class="eyebrow">Talent acquisition</p><h1 id="a-hire-title">Build the team ahead.</h1><p>Pipeline health, sources and upcoming interviews.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Post a job ↗</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Post a job ↗</button></div>
       </div>
       <div class="grid grid-3">
         <article class="card card--dark"><p class="kpi-label">Active candidates</p><p class="big-num" style="margin-top:12px" data-count="342">0</p><div class="stat-split"><div><b>17</b><small>Roles</small></div><div><b>24d</b><small>Time to hire</small></div><div><b>86%</b><small>Offer accept</small></div></div></article>
@@ -190,13 +193,13 @@
       </div>
       <div class="grid grid-21">
         <article class="card">
-          <div class="card-head"><div><h2>Open roles</h2><p>Sorted by urgency</p></div><button class="card-link" type="button">Manage roles</button></div>
+          <div class="card-head"><div><h2>Open roles</h2><p>Sorted by urgency</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">Manage roles</button></div>
           <div class="table-wrap"><table>
             <thead><tr><th>Role</th><th>Team</th><th>Pipeline</th><th>Priority</th><th></th></tr></thead>
             <tbody>
-              <tr><td>Senior Backend Engineer</td><td>Engineering</td><td>48</td><td><span class="pill bad">Urgent</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
-              <tr><td>Payroll Specialist</td><td>Finance</td><td>21</td><td><span class="pill warn">High</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
-              <tr><td>Product Designer</td><td>Design</td><td>36</td><td><span class="pill ok">Normal</span></td><td><button class="mini-btn" type="button">View</button></td></tr>
+              <tr><td>Senior Backend Engineer</td><td>Engineering</td><td>48</td><td><span class="pill bad">Urgent</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">View</button></td></tr>
+              <tr><td>Payroll Specialist</td><td>Finance</td><td>21</td><td><span class="pill warn">High</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">View</button></td></tr>
+              <tr><td>Product Designer</td><td>Design</td><td>36</td><td><span class="pill ok">Normal</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">View</button></td></tr>
             </tbody>
           </table></div>
         </article>
@@ -215,7 +218,7 @@
     <section class="data-section" id="a-payroll" aria-labelledby="a-pay-title">
       <div class="section-title">
         <div><p class="eyebrow">Payroll ops</p><h1 id="a-pay-title">Run payroll with confidence.</h1><p>Cycle status, cost trends, statutory filings and exceptions.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Run October payroll</button><button class="btn btn--outline" type="button">Preview</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Run October payroll</button><button class="btn btn--outline" type="button" onclick="window.location.href='../404.html'">Preview</button></div>
       </div>
       <div class="grid grid-4">
         <article class="card card--dark"><p class="kpi-label">Monthly payroll</p><p class="kpi-value" data-count="2.84" data-prefix="₹" data-suffix=" Cr">0</p><div class="kpi-foot"><span class="muted">October draft</span><svg class="spark" data-values="2.5,2.55,2.6,2.66,2.7,2.78,2.84"></svg></div></article>
@@ -261,9 +264,9 @@
         <div class="table-wrap"><table>
           <thead><tr><th>Employee</th><th>Issue</th><th>Impact</th><th>Status</th><th></th></tr></thead>
           <tbody>
-            <tr><td>Priya Menon</td><td>Bank details missing</td><td>₹92,000</td><td><span class="pill bad">Blocked</span></td><td><button class="mini-btn" type="button">Fix</button></td></tr>
-            <tr><td>Rahul Joshi</td><td>Loss of pay mismatch</td><td>₹4,200</td><td><span class="pill warn">Review</span></td><td><button class="mini-btn" type="button">Review</button></td></tr>
-            <tr><td>Karthik S.</td><td>Arrears from revision</td><td>₹18,500</td><td><span class="pill warn">Review</span></td><td><button class="mini-btn" type="button">Review</button></td></tr>
+            <tr><td>Priya Menon</td><td>Bank details missing</td><td>₹92,000</td><td><span class="pill bad">Blocked</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Fix</button></td></tr>
+            <tr><td>Rahul Joshi</td><td>Loss of pay mismatch</td><td>₹4,200</td><td><span class="pill warn">Review</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Review</button></td></tr>
+            <tr><td>Karthik S.</td><td>Arrears from revision</td><td>₹18,500</td><td><span class="pill warn">Review</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Review</button></td></tr>
           </tbody>
         </table></div>
       </article>
@@ -273,7 +276,7 @@
     <section class="data-section" id="a-insights" aria-labelledby="a-perf-title">
       <div class="section-title">
         <div><p class="eyebrow">Performance &amp; compliance</p><h1 id="a-perf-title">Healthy teams, clean records.</h1><p>Review cycles, engagement, policy acknowledgements and audits.</p></div>
-        <div class="title-actions"><button class="btn" type="button">Launch review cycle</button></div>
+        <div class="title-actions"><button class="btn" type="button" onclick="window.location.href='../404.html'">Launch review cycle</button></div>
       </div>
       <div class="grid grid-3">
         <article class="card card--dark">
@@ -301,7 +304,7 @@
           <svg class="line-chart" data-values="32,35,34,38,41,40,44,47" data-values2="30,30,31,31,32,32,33,33" data-labels="Q1'25,Q2,Q3,Q4,Q1'26,Q2,Q3,Q4"></svg>
         </article>
         <article class="card">
-          <div class="card-head"><div><h2>Audit trail</h2><p>Recent admin actions</p></div><button class="card-link" type="button">Full log</button></div>
+          <div class="card-head"><div><h2>Audit trail</h2><p>Recent admin actions</p></div><button class="card-link" type="button" onclick="window.location.href='../404.html'">Full log</button></div>
           <ul class="timeline">
             <li><small>Today, 09:12</small>Salary revision approved · Karthik S.</li>
             <li><small>Yesterday</small>Role permissions updated · Finance</li>
@@ -315,9 +318,9 @@
         <div class="table-wrap"><table>
           <thead><tr><th>Item</th><th>Owner</th><th>Due</th><th>Risk</th><th></th></tr></thead>
           <tbody>
-            <tr><td>Labour law register update</td><td>People Ops</td><td>18 Oct</td><td><span class="pill bad">High</span></td><td><button class="mini-btn" type="button">Assign</button></td></tr>
-            <tr><td>Contract renewals (6)</td><td>Legal</td><td>25 Oct</td><td><span class="pill warn">Medium</span></td><td><button class="mini-btn" type="button">Open</button></td></tr>
-            <tr><td>Annual fire-safety drill</td><td>Facilities</td><td>5 Nov</td><td><span class="pill ok">Low</span></td><td><button class="mini-btn" type="button">Schedule</button></td></tr>
+            <tr><td>Labour law register update</td><td>People Ops</td><td>18 Oct</td><td><span class="pill bad">High</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Assign</button></td></tr>
+            <tr><td>Contract renewals (6)</td><td>Legal</td><td>25 Oct</td><td><span class="pill warn">Medium</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Open</button></td></tr>
+            <tr><td>Annual fire-safety drill</td><td>Facilities</td><td>5 Nov</td><td><span class="pill ok">Low</span></td><td><button class="mini-btn" type="button" onclick="window.location.href='../404.html'">Schedule</button></td></tr>
           </tbody>
         </table></div>
       </article>

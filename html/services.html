@@ -11,8 +11,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="../css/services.css">
+  <script>
+    (function(){var p=window.location.pathname;if(window.location.hash||(window.history.state&&window.history.state.returnToCta)||sessionStorage.getItem('stackly_cta_return_'+p)){document.documentElement.classList.add('has-cta-hash','no-loader');}})();
+  </script>
 </head>
 <body>
+  <div class="page-loader" id="page-loader" aria-label="Loading page" role="status">
+    <img class="page-loader__logo" src="../logo.webp" alt="Stackly">
+    <div class="page-loader__spinner" aria-hidden="true"></div>
+    <div class="page-loader__bar" aria-hidden="true"><div class="page-loader__fill"></div></div>
+  </div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
@@ -297,7 +305,7 @@
     </section>
 
     <!-- Engagement models -->
-    <section class="section" aria-labelledby="engagement-title">
+    <section class="section" id="engagement" aria-labelledby="engagement-title">
       <div class="container">
         <div class="section-head">
           <div class="reveal-left">
@@ -380,7 +388,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="services-cta" aria-labelledby="cta-title">
+    <section class="services-cta" id="cta" aria-labelledby="cta-title">
       <div class="container">
         <p class="eyebrow reveal-left">Start a conversation</p>
         <h2 id="cta-title" class="reveal-left">Where would you like to begin?</h2>
@@ -406,15 +414,21 @@
     </div>
   </footer>
 
+  <script src="../js/cta-nav.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script>
   (() => {
     'use strict';
-    history.scrollRestoration = 'manual';
-    const resetTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    window.addEventListener('pageshow', (event) => { if (event.persisted) resetTop(); });
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    const pageLoader = document.getElementById('page-loader');
+    if (pageLoader) {
+      if (window.StacklyCta && window.StacklyCta.isCtaNav()) {
+        pageLoader.classList.add('is-hidden');
+        pageLoader.setAttribute('aria-hidden', 'true');
+      } else {
+        window.setTimeout(() => pageLoader.classList.add('is-hidden'), 1500);
+      }
+    }
 
     const menu = document.getElementById('fullscreen-menu');
     const openButton = document.querySelector('.menu-toggle');

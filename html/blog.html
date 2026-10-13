@@ -13,9 +13,17 @@
 <link rel="stylesheet" href="../global.css" />
 <link rel="stylesheet" href="../css/blog.css" />
 
-<script>document.documentElement.classList.add('has-js');</script>
+<script>
+  (function(){var p=window.location.pathname;if(window.location.hash||(window.history.state&&window.history.state.returnToCta)||sessionStorage.getItem('stackly_cta_return_'+p)){document.documentElement.classList.add('has-cta-hash','no-loader');}})();
+  document.documentElement.classList.add('has-js');
+</script>
 </head>
 <body>
+  <div class="page-loader" id="page-loader" aria-label="Loading page" role="status">
+    <img class="page-loader__logo" src="../logo.webp" alt="Stackly">
+    <div class="page-loader__spinner" aria-hidden="true"></div>
+    <div class="page-loader__bar" aria-hidden="true"><div class="page-loader__fill"></div></div>
+  </div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -163,7 +171,7 @@
             recording context is worth more than any tool.
           </p>
 
-          <a class="btn btn--secondary btn--sm" href="404.html">
+          <a class="btn btn--secondary btn--sm" href="../404.html">
             Read the essay <span class="btn__arrow" aria-hidden="true">→</span>
           </a>
         </div>
@@ -200,7 +208,7 @@
               Most prototypes die the moment the meeting ends. A few don't — and
               they tend to share three quiet habits worth copying.
             </p>
-            <a class="link-arrow" href="404.html">
+            <a class="link-arrow" href="../404.html">
               Read the note
               <span class="link-arrow__icon" aria-hidden="true">→</span>
             </a>
@@ -220,7 +228,7 @@
             A component library is not neutral. Every token encodes a decision
             about what the product values.
           </p>
-          <a class="link-arrow" href="404.html">
+          <a class="link-arrow" href="../404.html">
             Read the note <span class="link-arrow__icon" aria-hidden="true">→</span>
           </a>
         </article>
@@ -237,7 +245,7 @@
             The hardest scope decision is rarely the first cut. It is the one
             that arrives the week after launch.
           </p>
-          <a class="link-arrow" href="404.html">
+          <a class="link-arrow" href="../404.html">
             Read the note <span class="link-arrow__icon" aria-hidden="true">→</span>
           </a>
         </article>
@@ -250,7 +258,7 @@
             What a one-sentence product brief actually has to contain — and what
             it can safely leave out.
           </p>
-          <a class="link-arrow" href="404.html">
+          <a class="link-arrow" href="../404.html">
             Read <span class="link-arrow__icon" aria-hidden="true">→</span>
           </a>
         </article>
@@ -262,7 +270,7 @@
             If a feature cannot be felt by a real user inside two weeks, the
             scope is probably wrong.
           </p>
-          <a class="link-arrow" href="404.html">
+          <a class="link-arrow" href="../404.html">
             Read <span class="link-arrow__icon" aria-hidden="true">→</span>
           </a>
         </article>
@@ -296,17 +304,17 @@
           <li class="thinking__item">
             <h3 class="thinking__item-title">Narrow first, then earn breadth</h3>
             <p>A smaller surface finished well beats a larger one finished never. We write about how we pick the first slice.</p>
-            <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
           </li>
           <li class="thinking__item">
             <h3 class="thinking__item-title">Signals vs. opinions</h3>
             <p>How to argue with what people actually did — instead of what everyone in the room assumed.</p>
-            <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
           </li>
           <li class="thinking__item">
             <h3 class="thinking__item-title">The cost of a clever idea</h3>
             <p>Why we prefer a boring solution that survives to a clever one that needs an owner.</p>
-            <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
           </li>
         </ul>
       </div>
@@ -335,7 +343,7 @@
             <div>
               <h3 class="lessons__item-title">The pitch is not the product</h3>
               <p>Why the sentence that wins the room often slows down the build — and what to do about it.</p>
-              <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
             </div>
           </li>
           <li class="lessons__item">
@@ -343,7 +351,7 @@
             <div>
               <h3 class="lessons__item-title">Hiring the second person</h3>
               <p>What changes structurally when the team goes from one to two, and again from two to five.</p>
-              <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
             </div>
           </li>
           <li class="lessons__item">
@@ -351,7 +359,7 @@
             <div>
               <h3 class="lessons__item-title">Say the quiet part</h3>
               <p>Why writing down what you're unsure about — in public — is often the strongest thing you can do.</p>
-              <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
             </div>
           </li>
         </ul>
@@ -388,7 +396,7 @@
           make a product feel calm — the ones users never notice, because
           nothing interrupted them.
         </p>
-        <a class="link-arrow" href="404.html">
+        <a class="link-arrow" href="../404.html">
           Read the collection <span class="link-arrow__icon" aria-hidden="true">→</span>
         </a>
       </div>
@@ -471,7 +479,7 @@
             Why we design a short cycle between a decision and its consequence —
             instead of long phases that end in a status update.
           </p>
-          <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+          <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
         </article>
         <article class="systems__note reveal-up">
           <p class="notes__meta">Process note · Illustrative</p>
@@ -480,7 +488,7 @@
             If the team cannot explain it, the product cannot hold it. A short
             piece on writing systems down so they survive handover.
           </p>
-          <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+          <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
         </article>
         <article class="systems__note reveal-right">
           <p class="notes__meta">Process note · Illustrative</p>
@@ -489,7 +497,7 @@
             How we decide what the first release has to contain — and what it
             can safely be allowed to grow into later.
           </p>
-          <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+          <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
         </article>
       </div>
 
@@ -526,7 +534,7 @@
               Why the most productive teams we've seen spend more time removing
               work than adding it.
             </p>
-            <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
           </div>
         </li>
 
@@ -542,7 +550,7 @@
               A short reflection on context, memory, and why the best note is
               the one you wrote at the moment you knew.
             </p>
-            <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
           </div>
         </li>
 
@@ -558,7 +566,7 @@
               Why we keep building things people can actually use, instead of
               things that look impressive for ninety seconds.
             </p>
-            <a class="link-arrow" href="404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="../404.html">Read <span class="link-arrow__icon" aria-hidden="true">→</span></a>
           </div>
         </li>
 
@@ -597,9 +605,9 @@
               users stop noticing.
             </p>
             <ul class="reading__links">
-              <li><a href="404.html">Quiet design, strong opinions</a></li>
-              <li><a href="404.html">Against the notification</a></li>
-              <li><a href="404.html">Defaults as design</a></li>
+              <li><a href="../404.html">Quiet design, strong opinions</a></li>
+              <li><a href="../404.html">Against the notification</a></li>
+              <li><a href="../404.html">Defaults as design</a></li>
             </ul>
           </div>
         </article>
@@ -618,9 +626,9 @@
               keep a growing team honest.
             </p>
             <ul class="reading__links">
-              <li><a href="404.html">Decisions written down</a></li>
-              <li><a href="404.html">The handover as a deliverable</a></li>
-              <li><a href="404.html">Patterns with owners</a></li>
+              <li><a href="../404.html">Decisions written down</a></li>
+              <li><a href="../404.html">The handover as a deliverable</a></li>
+              <li><a href="../404.html">Patterns with owners</a></li>
             </ul>
           </div>
         </article>
@@ -639,9 +647,9 @@
               thing — where most of the real work happens.
             </p>
             <ul class="reading__links">
-              <li><a href="404.html">Staying with it</a></li>
-              <li><a href="404.html">The two-week rule</a></li>
-              <li><a href="404.html">Boring wins</a></li>
+              <li><a href="../404.html">Staying with it</a></li>
+              <li><a href="../404.html">The two-week rule</a></li>
+              <li><a href="../404.html">Boring wins</a></li>
             </ul>
           </div>
         </article>
@@ -678,7 +686,7 @@
   <!-- ===================================================================
        11 · FINAL CTA
        =================================================================== -->
-  <section class="section section--deep blog-cta" aria-labelledby="blog-cta-title">
+  <section class="section section--deep blog-cta" id="cta" aria-labelledby="blog-cta-title">
     <div class="container blog-cta__inner">
       <p class="eyebrow reveal-up">Let's Talk</p>
       <h2 class="blog-cta__title reveal-up" id="blog-cta-title">
@@ -717,11 +725,22 @@
     </div>
   </footer>
 
+<script src="../js/cta-nav.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 (function () {
   'use strict';
+
+  var pageLoader = document.getElementById('page-loader');
+  if (pageLoader) {
+    if (window.StacklyCta && window.StacklyCta.isCtaNav()) {
+      pageLoader.classList.add('is-hidden');
+      pageLoader.setAttribute('aria-hidden', 'true');
+    } else {
+      window.setTimeout(function () { pageLoader.classList.add('is-hidden'); }, 1500);
+    }
+  }
 
   var root = document.documentElement;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

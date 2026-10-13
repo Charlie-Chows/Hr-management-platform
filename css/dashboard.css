@@ -12,8 +12,15 @@
 }
 html { scroll-padding-top: calc(var(--dash-header-h) + 24px); }
 body.dash { background: var(--color-bg); min-height: 100vh; }
+html.nav-open,
 html:has(body.dash.nav-open),
-body.dash.nav-open { overflow: hidden !important; height: 100vh; height: 100dvh; overscroll-behavior: none; }
+body.dash.nav-open {
+  overflow: hidden !important;
+  height: 100vh;
+  height: 100dvh;
+  overscroll-behavior: none;
+  touch-action: none;
+}
 
 /* ---------- Sidebar ---------- */
 .sidebar {
@@ -23,7 +30,17 @@ body.dash.nav-open { overflow: hidden !important; height: 100vh; height: 100dvh;
   background-image: radial-gradient(circle at 0% 0%, rgba(160,120,74,.22), transparent 55%);
   transition: transform var(--transition-base);
 }
-.side-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 4px 8px 18px; border-bottom: 1px solid rgba(225,220,201,.12); }
+.side-top {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 10px;
+  padding: 4px 8px 18px; border-bottom: 1px solid rgba(225,220,201,.12);
+}
+.side-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 0; }
+.side-close {
+  display: none; width: 36px; height: 36px; border: 1px solid rgba(225,220,201,.25); border-radius: 6px;
+  background: transparent; color: var(--color-parchment); font-size: 1.4rem; line-height: 1; cursor: pointer;
+  align-items: center; justify-content: center; transition: background var(--transition-fast);
+}
+.side-close:hover { background: rgba(225,220,201,.12); }
 .side-brand img { width: 124px; max-height: 42px; object-fit: contain; filter: brightness(0) saturate(100%) invert(86%) sepia(13%) saturate(340%) hue-rotate(8deg) brightness(95%) contrast(88%); }
 .role-chip { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border: 1px solid rgba(225,220,201,.35); border-radius: 999px; font-size: .64rem; font-weight: 700; letter-spacing: .18em; background: rgba(225,220,201,.08); }
 .role-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sand); box-shadow: 0 0 0 3px rgba(201,182,142,.25); animation: pulse 2.2s infinite; }
@@ -59,9 +76,19 @@ body.dash.nav-open { overflow: hidden !important; height: 100vh; height: 100dvh;
 .header-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .hello { font-family: var(--font-display); font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 700; letter-spacing: -.03em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .hello small { display: block; color: var(--color-muted); font-family: var(--font-body); font-size: .74rem; font-weight: 500; letter-spacing: 0; }
-.nav-burger { display: none; width: 42px; height: 42px; padding: 11px 10px; border: 1px solid var(--color-border); border-radius: 6px; background: transparent; cursor: pointer; }
-.nav-burger span { display: block; height: 1.5px; margin: 4px 0; background: var(--color-espresso); }
-.header-profile { display: flex; align-items: center; gap: 10px; padding: 5px 5px 5px 14px; border: 1px solid var(--color-border); border-radius: 999px; background: var(--card-bg); }
+.nav-burger { display: none; width: 42px; height: 42px; padding: 10px; border: 1px solid var(--color-border); border-radius: 6px; background: transparent; cursor: pointer; touch-action: manipulation; }
+.nav-burger span { display: block; height: 2px; margin: 4.5px 0; background: var(--color-espresso); pointer-events: none; }
+.header-profile {
+  display: flex; align-items: center; gap: 10px; padding: 5px 5px 5px 14px;
+  border: 1px solid var(--color-border); border-radius: 999px; background: var(--card-bg);
+  cursor: pointer; text-decoration: none; color: inherit;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.header-profile:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-brown);
+  box-shadow: 0 4px 12px rgba(31,21,12,.08);
+}
 .header-profile .email { font-size: .8rem; font-weight: 600; color: var(--color-brown); }
 .header-profile .avatar { width: 36px; height: 36px; font-size: .9rem; }
 
@@ -242,6 +269,7 @@ body.nav-open .nav-overlay { opacity: 1; pointer-events: auto; }
 @media (max-width: 1024px) {
   .sidebar { transform: translateX(-100%); box-shadow: 20px 0 40px rgba(0,0,0,.25); }
   body.nav-open .sidebar { transform: none; }
+  .side-close { display: flex; }
   .dash-header { left: 0; }
   .dash-main { margin-left: 0; }
   .nav-burger { display: block; }

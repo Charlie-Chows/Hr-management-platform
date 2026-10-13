@@ -306,6 +306,17 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
+.notes__head .h2,
+.featured__head .h2,
+.systems__head .h2,
+.perspectives__head .h2,
+.reading__head .h2,
+.thinking__copy .h2,
+.lessons__copy .h2,
+.curious__copy .h2 {
+  margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
 .notes__grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -471,10 +482,32 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
 /* -------------------------------------------------------------------------
    5. STARTUP LESSONS
    ------------------------------------------------------------------------- */
+.section--dark {
+   background-color: var(--blue-deep, #08213A) !important;
+   color: var(--on-dark, #F3E4C9) !important;
+}
+
+.lessons {
+  background-color: var(--blue-deep, #08213A);
+  color: var(--on-dark, #F3E4C9);
+}
+
+.lessons__copy .eyebrow {
+  color: var(--mineral-deep, #B9BAA6);
+}
+
+.lessons__copy .h2 {
+  color: var(--on-dark, #F3E4C9);
+}
+
+.lessons__copy .lede {
+  color: var(--on-dark-80, rgba(243, 228, 201, .8));
+}
+
 .lessons__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
-  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
 }
 
@@ -504,7 +537,7 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
 
 .lessons__item-title {
   margin: 0 0 .25rem;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 600;
   color: var(--on-dark, #F3E4C9);
 }
@@ -513,15 +546,17 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
   margin: 0 0 .35rem;
   font-size: .95rem;
   line-height: 1.55;
-  color: var(--on-dark-60);
+  color: var(--on-dark-80, rgba(243, 228, 201, .8));
 }
 
 .lessons__media {
   position: relative;
-  aspect-ratio: 4 / 5;
-  max-height: 420px;
+  aspect-ratio: 4 / 4.6;
+  width: 100%;
+  max-height: 520px;
   overflow: hidden;
   border-radius: var(--radius-lg);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .5);
 }
 
 .lessons__media img {
@@ -539,7 +574,7 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--on-dark, #F3E4C9);
-  background-color: rgba(10, 41, 71, .7);
+  background-color: rgba(10, 41, 71, .85);
   border-radius: var(--radius-xs);
 }
 
@@ -580,10 +615,14 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
 .bleed__card-wrap {
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .bleed__card {
-  max-width: 520px;
+  width: 100%;
+  max-width: 580px;
+  margin-inline: auto;
   padding: clamp(1.5rem, 3vw, 2.25rem);
   background-color: var(--brand-parchment, #F3E4C9);
   color: var(--ink, #0A2947);
@@ -881,12 +920,28 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
   justify-content: center;
 }
 
+.blog-hero .btn--primary,
+.blog-cta .btn--primary {
+  background: var(--on-dark, #F3E4C9);
+  color: var(--blue-deep, #08213A);
+  border-color: var(--on-dark, #F3E4C9);
+}
+
+.blog-hero .btn--primary:hover,
+.blog-cta .btn--primary:hover {
+  background: var(--brand-earth, #8B5E3C);
+  color: var(--on-dark, #F3E4C9);
+  border-color: var(--brand-earth, #8B5E3C);
+}
+
+.blog-hero .btn--secondary,
 .btn--on-dark {
   color: var(--on-dark, #F3E4C9) !important;
   border-color: rgba(243, 228, 201, .45) !important;
   background: transparent;
 }
 
+.blog-hero .btn--secondary:hover,
 .btn--on-dark:hover {
   background: rgba(243, 228, 201, .14) !important;
   border-color: var(--on-dark, #F3E4C9) !important;
@@ -914,8 +969,8 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
 
   .featured__media { max-height: 340px; }
 
-  .thinking__media,
-  .lessons__media { max-height: 360px; }
+  .thinking__media { max-height: 360px; }
+  .lessons__media { max-height: 480px; }
 
   .notes__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .notes__lead { grid-column: span 4; }

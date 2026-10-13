@@ -11,8 +11,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="../css/about.css">
+  <script>
+    (function(){var p=window.location.pathname;if(window.location.hash||(window.history.state&&window.history.state.returnToCta)||sessionStorage.getItem('stackly_cta_return_'+p)){document.documentElement.classList.add('has-cta-hash','no-loader');}})();
+  </script>
 </head>
 <body>
+  <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-label="Loading Stackly HR">
+    <img class="page-loader__logo" src="../logo.webp" alt="Stackly">
+    <span class="page-loader__spinner" aria-hidden="true"></span>
+    <div class="page-loader__bar" aria-hidden="true"><span class="page-loader__fill"></span></div>
+  </div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
@@ -237,7 +245,7 @@
     </section>
 
     <!-- CTA -->
-    <section class="about-cta" aria-labelledby="cta-title">
+    <section class="about-cta" id="cta" aria-labelledby="cta-title">
       <div class="container">
         <p class="eyebrow reveal-left">Work with us</p>
         <h2 id="cta-title" class="reveal-left">Let's build a workplace people are glad to be part of.</h2>
@@ -263,15 +271,24 @@
     </div>
   </footer>
 
+  <script src="../js/cta-nav.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script>
   (() => {
     'use strict';
-    history.scrollRestoration = 'manual';
-    const resetTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    window.addEventListener('pageshow', (event) => { if (event.persisted) resetTop(); });
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+      if (window.StacklyCta && window.StacklyCta.isCtaNav()) {
+        loader.classList.add('is-hidden');
+        loader.setAttribute('aria-hidden', 'true');
+      } else {
+        setTimeout(() => {
+          loader.classList.add('is-hidden');
+          loader.setAttribute('aria-hidden', 'true');
+        }, 1500);
+      }
+    }
 
     const menu = document.getElementById('fullscreen-menu');
     const openButton = document.querySelector('.menu-toggle');

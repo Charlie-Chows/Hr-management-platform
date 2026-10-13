@@ -10,47 +10,72 @@
   <title>Page not found — Stackly HR</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="global.css">
   <style>
+    :root {
+      --color-espresso: #1F150C;
+      --color-brown: #8B5E3C;
+      --color-parchment: #E1DCC9;
+      --color-bg: #E7DFC6;
+      --color-surface: #EDE7D4;
+      --color-muted: #5C4B3C;
+      --color-border: rgba(31, 21, 12, 0.15);
+      --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+      --transition-base: .32s cubic-bezier(.22, 1, .36, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
     /* ---------- 404 page ---------- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--color-bg);
+      color: var(--color-espresso);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden !important;
+      overscroll-behavior: none;
+    }
+    .btn {
+      min-height: 52px; display: inline-flex; justify-content: center; align-items: center; gap: 14px;
+      padding: 14px 22px; border: 1px solid var(--color-espresso); border-radius: 2px;
+      background: var(--color-espresso); color: var(--color-parchment); font-weight: 700;
+      font-size: .88rem; cursor: pointer; text-decoration: none;
+      transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base), border-color var(--transition-base);
+    }
+    .btn:hover { background: var(--color-brown); border-color: var(--color-brown); transform: translateY(-2px); }
+    .btn--outline { color: var(--color-espresso); background: transparent; }
+    .btn--outline:hover { color: var(--color-parchment); background: var(--color-espresso); border-color: var(--color-espresso); }
+    .btn__arrow { font-size: 1.1rem; line-height: 1; }
+    main {
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+    }
     .not-found {
-      min-height: calc(100svh - var(--header-height));
+      height: 100%;
       display: grid;
       place-items: center;
-      padding: clamp(60px, 9vw, 130px) 0;
+      padding: 24px 0;
       text-align: center;
+      overflow: hidden;
     }
     .not-found .container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       max-width: 780px;
-    }
-
-    .nf-index {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 clamp(28px, 4vw, 44px);
-      color: var(--color-muted);
-      font-size: .74rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-    .nf-index::before,
-    .nf-index::after {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: currentColor;
     }
 
     .nf-code {
       margin: 0;
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: clamp(7rem, 22vw, 18rem);
+      font-size: clamp(6rem, min(20vw, 28vh), 16rem);
       line-height: .9;
       letter-spacing: -.08em;
       color: var(--color-espresso);
@@ -64,18 +89,20 @@
     }
 
     .not-found h1 {
-      margin: clamp(20px, 3vw, 34px) 0 0;
+      margin: clamp(14px, 2.4vh, 28px) 0 0;
       max-width: 720px;
       font-weight: 500;
-      font-size: clamp(1.6rem, 3.2vw, 3rem);
+      font-size: clamp(1.5rem, min(3vw, 4.5vh), 2.85rem);
       line-height: 1.12;
       letter-spacing: -.045em;
     }
 
     .not-found .lead {
-      margin: clamp(20px, 2.6vw, 30px) auto 0;
+      margin: clamp(12px, 2vh, 24px) auto 0;
       max-width: 540px;
       color: var(--color-muted);
+      font-size: clamp(.95rem, min(1.25vw, 2.2vh), 1.15rem);
+      line-height: 1.65;
     }
 
     .nf-actions {
@@ -83,126 +110,19 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin-top: clamp(32px, 4vw, 48px);
+      margin-top: clamp(22px, 3.5vh, 40px);
     }
 
-    /* Suggest destinations */
-    .nf-suggest {
-      margin-top: clamp(60px, 8vw, 110px);
-      width: 100%;
-      border-top: 1px solid var(--color-border);
-      padding-top: clamp(30px, 4vw, 48px);
-    }
-    .nf-suggest .eyebrow {
-      margin-bottom: 26px;
-      justify-content: center;
-    }
-    .nf-suggest .eyebrow::before { display: none; }
-    .nf-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--color-border);
-      border: 1px solid var(--color-border);
-    }
-    .nf-tile {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: clamp(22px, 2.6vw, 32px);
-      background: var(--color-bg);
-      text-align: left;
-      transition: background var(--transition-base), color var(--transition-base);
-    }
-    .nf-tile:hover {
-      background: var(--color-espresso);
-      color: var(--color-parchment);
-    }
-    .nf-tile .nf-num {
-      font: 600 .72rem/1 var(--font-display);
-      letter-spacing: .14em;
-      color: var(--color-muted);
-      transition: color var(--transition-base);
-    }
-    .nf-tile:hover .nf-num { color: rgba(225, 220, 201, .68); }
-    .nf-tile h3 {
-      font-size: clamp(1rem, 1.2vw, 1.15rem);
-      letter-spacing: -.02em;
-    }
-    .nf-tile span.nf-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: auto;
-      padding-top: 6px;
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--color-muted);
-      transition: color var(--transition-base);
-    }
-    .nf-tile:hover span.nf-link { color: var(--color-parchment); }
-
-    /* Footer note inside page (small) */
-    .nf-foot {
-      margin-top: clamp(40px, 5vw, 60px);
-      color: var(--color-muted);
-      font-size: .76rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .nf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
     @media (max-width: 520px) {
-      .nf-grid { grid-template-columns: 1fr; }
       .nf-actions { flex-direction: column; width: 100%; max-width: 320px; }
       .nf-actions .btn { width: 100%; }
-      .nf-index::before,
-      .nf-index::after { width: 18px; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Stackly HR home"><img src="logo.webp" alt="Stackly"></a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="html/about.html">About</a>
-        <a class="nav-link" href="html/services.html">Services</a>
-        <a class="nav-link" href="html/blog.html">Blog</a>
-        <a class="nav-link" href="html/contact.html">Contact</a>
-      </nav>
-      <a class="btn header-login" href="html/login.html">Login <span class="btn__arrow" aria-hidden="true">↗</span></a>
-      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="fullscreen-menu"><span></span><span></span></button>
-    </div>
-  </header>
-
-  <div class="fullscreen-menu" id="fullscreen-menu" aria-hidden="true">
-    <div class="menu-top">
-      <a class="brand menu-logo" href="index.html" aria-label="Stackly HR home"><img src="logo.webp" alt="Stackly"></a>
-      <button class="menu-close" type="button" aria-label="Close navigation menu">×</button>
-    </div>
-    <nav class="menu-nav" aria-label="Mobile navigation">
-      <a href="index.html">Home</a>
-      <a href="html/about.html">About</a>
-      <a href="html/services.html">Services</a>
-      <a href="html/blog.html">Blog</a>
-      <a href="html/contact.html">Contact</a>
-      <a class="menu-login" href="html/login.html">Login <span aria-hidden="true">↗</span></a>
-    </nav>
-    <div class="menu-foot"><span>People first. Always.</span><span>Stackly HR · Salem, India</span></div>
-  </div>
-
   <main id="main">
     <section class="not-found" aria-labelledby="nf-title">
       <div class="container">
-        <p class="nf-index reveal-up">Lost &amp; found</p>
-
         <p class="nf-code reveal-up" aria-hidden="true">4<em>0</em>4</p>
 
         <h1 id="nf-title" class="reveal-up">This page has wandered off.</h1>
@@ -211,108 +131,34 @@
 
         <div class="nf-actions reveal-up">
           <a class="btn" href="index.html">Back to home <span class="btn__arrow" aria-hidden="true">↗</span></a>
-          <a class="btn btn--outline" href="html/contact.html">Let us know <span class="btn__arrow" aria-hidden="true">↗</span></a>
+          <button class="btn btn--outline" type="button" id="go-back-btn">Go back <span class="btn__arrow" aria-hidden="true">↗</span></button>
         </div>
-
-        <div class="nf-suggest reveal-up">
-          <p class="eyebrow">Or try one of these</p>
-          <div class="nf-grid">
-            <a class="nf-tile" href="html/about.html">
-              <span class="nf-num">01</span>
-              <h3>About Stackly</h3>
-              <span class="nf-link">Read more <span aria-hidden="true">↗</span></span>
-            </a>
-            <a class="nf-tile" href="html/services.html">
-              <span class="nf-num">02</span>
-              <h3>Our services</h3>
-              <span class="nf-link">Read more <span aria-hidden="true">↗</span></span>
-            </a>
-            <a class="nf-tile" href="html/blog.html">
-              <span class="nf-num">03</span>
-              <h3>The journal</h3>
-              <span class="nf-link">Read more <span aria-hidden="true">↗</span></span>
-            </a>
-            <a class="nf-tile" href="html/contact.html">
-              <span class="nf-num">04</span>
-              <h3>Contact us</h3>
-              <span class="nf-link">Read more <span aria-hidden="true">↗</span></span>
-            </a>
-          </div>
-        </div>
-
-        <p class="nf-foot reveal-up">Stackly HR · People, thoughtfully managed</p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand"><a class="brand" href="index.html" aria-label="Stackly HR home"><img src="logo.webp" alt="Stackly"></a><p>Thoughtful people operations for teams building what comes next.</p><div class="social-links" aria-label="Social links"><a href="404.html" aria-label="Instagram">IG</a><a href="404.html" aria-label="LinkedIn">in</a><a href="404.html" aria-label="Facebook">f</a><a href="404.html" aria-label="YouTube">YT</a></div></div>
-        <div class="footer-col"><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="html/about.html">About</a></li><li><a href="html/services.html">Services</a></li><li><a href="html/blog.html">Blog</a></li><li><a href="html/contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h3>Our world</h3><ul><li><a href="404.html">People first</a></li><li><a href="404.html">Our approach</a></li><li><a href="404.html">Careers</a></li><li><a href="404.html">Partner network</a></li></ul></div>
-        <div class="footer-col"><h3>Resources</h3><ul><li><a href="404.html">Help centre</a></li><li><a href="404.html">Privacy</a></li><li><a href="404.html">Terms of use</a></li><li><a href="404.html">Accessibility</a></li></ul></div>
-        <div class="footer-col footer-contact"><h3>Say hello</h3><p><span class="contact-icon" aria-hidden="true">☎</span><span>+91 XXXXX XXXXX</span></p><p><span class="contact-icon" aria-hidden="true">⌖</span><span>Stackly<br>Salem, Tamil Nadu, India</span></p><p><span class="contact-icon" aria-hidden="true">✉</span><span>People, thoughtfully managed.</span></p></div>
-      </div>
-      <div class="footer-bottom"><span>© <span id="current-year">2026</span> Stackly HR. All rights reserved.</span><span>Made for people and the work they do.</span></div>
-    </div>
-  </footer>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script>
   (() => {
     'use strict';
-    history.scrollRestoration = 'manual';
-    const resetTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    window.addEventListener('pageshow', (event) => { if (event.persisted) resetTop(); });
-    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-
-    const menu = document.getElementById('fullscreen-menu');
-    const openButton = document.querySelector('.menu-toggle');
-    const closeButton = document.querySelector('.menu-close');
-    const menuLinks = [...menu.querySelectorAll('a')];
-    let priorFocus = null;
-
-    function openMenu() {
-      priorFocus = document.activeElement;
-      menu.classList.add('is-open');
-      menu.setAttribute('aria-hidden', 'false');
-      openButton.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('menu-open');
-      if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        gsap.fromTo(menuLinks, { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: .45, stagger: .055, ease: 'power3.out', clearProps: 'transform' });
-      }
-      closeButton.focus();
+    const goBackBtn = document.getElementById('go-back-btn');
+    if (goBackBtn) {
+      goBackBtn.addEventListener('click', () => {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = 'index.html';
+        }
+      });
     }
-    function closeMenu() {
-      menu.classList.remove('is-open');
-      menu.setAttribute('aria-hidden', 'true');
-      openButton.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-      if (priorFocus) priorFocus.focus();
-    }
-    openButton.addEventListener('click', openMenu);
-    closeButton.addEventListener('click', closeMenu);
-    menuLinks.forEach(link => link.addEventListener('click', () => {
-      document.body.classList.remove('menu-open');
-      menu.classList.remove('is-open');
-      menu.setAttribute('aria-hidden', 'true');
-      openButton.setAttribute('aria-expanded', 'false');
-    }));
-    document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.classList.contains('is-open')) closeMenu(); });
-    window.addEventListener('resize', () => { if (window.innerWidth > 1050 && menu.classList.contains('is-open')) closeMenu(); });
-    document.getElementById('current-year').textContent = new Date().getFullYear();
 
     function initMotion() {
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!window.gsap || !window.ScrollTrigger || reduced) return;
+      if (!window.gsap || reduced) return;
       document.documentElement.classList.add('js-motion');
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray('.reveal-up').forEach(el => gsap.fromTo(el, { y: 28, opacity: 0 }, {
-        y: 0, opacity: 1, duration: .75, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 92%', once: true }
-      }));
+      gsap.fromTo('.reveal-up', { y: 28, opacity: 0 }, {
+        y: 0, opacity: 1, duration: .75, stagger: .08, ease: 'power2.out'
+      });
     }
     if (document.readyState === 'complete') initMotion();
     else window.addEventListener('load', initMotion, { once: true });

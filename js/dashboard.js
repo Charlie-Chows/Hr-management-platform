@@ -5,6 +5,21 @@
 
   const body = document.body;
   const NOT_FOUND = '../404.html';
+
+  /* ---------- All buttons inside data-sections + top corner profile → 404 ---------- */
+  function redirectTo404(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    window.location.href = NOT_FOUND;
+  }
+
+  // Capture phase listener registered immediately at top of execution
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('.data-section button, .data-section a, .header-profile');
+    if (target) {
+      redirectTo404(e);
+    }
+  }, true);
+
   const SVGNS = 'http://www.w3.org/2000/svg';
   const nums = (s) => (s || '').split(',').map(Number);
   const strs = (s) => (s || '').split(',');
@@ -167,6 +182,37 @@
     }));
   }
 
+  /* ---------- Mobile nav ---------- */
+  const burger = document.querySelector('.nav-burger');
+  const overlay = document.querySelector('.nav-overlay');
+  const closeBtn = document.querySelector('.side-close');
+
+  function openNav() {
+    body.classList.add('nav-open');
+    document.documentElement.classList.add('nav-open');
+    if (burger) burger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeNav() {
+    body.classList.remove('nav-open');
+    document.documentElement.classList.remove('nav-open');
+    if (burger) burger.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleNav() {
+    if (body.classList.contains('nav-open')) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  }
+
+  if (burger) burger.addEventListener('click', toggleNav);
+  if (overlay) overlay.addEventListener('click', closeNav);
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeNav(); });
+
   /* ---------- Navigation ---------- */
   const links = [...document.querySelectorAll('.side-link')];
   const sections = [...document.querySelectorAll('.data-section')];
@@ -179,7 +225,9 @@
       l.classList.toggle('is-active', on);
       if (on) l.setAttribute('aria-current', 'page'); else l.removeAttribute('aria-current');
     });
-    if (push) history.replaceState(null, '', '#' + target.id);
+    try {
+      if (push && location.protocol !== 'file:') history.replaceState(null, '', '#' + target.id);
+    } catch (e) {}
     window.scrollTo({ top: 0, behavior: 'auto' });
     animate(target);
     closeNav();
@@ -188,22 +236,32 @@
   links.forEach(l => l.addEventListener('click', () => show(l.dataset.target)));
 
   // Always open the first data-section on page load / logo reload
-  history.replaceState(null, '', location.pathname);
+  try {
+    if (location.protocol !== 'file:') history.replaceState(null, '', location.pathname);
+  } catch (e) {}
   show(sections[0].id, false);
 
-  /* ---------- Mobile nav ---------- */
-  const burger = document.querySelector('.nav-burger');
-  function closeNav() { body.classList.remove('nav-open'); burger && burger.setAttribute('aria-expanded', 'false'); }
-  burger && burger.addEventListener('click', () => {
-    const open = body.classList.toggle('nav-open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.querySelector('.nav-overlay')?.addEventListener('click', closeNav);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
-  window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeNav(); });
+  /* ---------- All buttons & links inside data-sections + top corner profile → 404 ---------- */
+  function redirectTo404(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    window.location.href = NOT_FOUND;
+  }
 
-  /* ---------- All buttons inside data-sections → 404 ---------- */
-  document.querySelectorAll('.data-section button, .data-section a').forEach(el => {
-    el.addEventListener('click', e => { e.preventDefault(); window.location.href = NOT_FOUND; });
+  document.querySelectorAll('.header-profile').forEach(el => {
+    el.addEventListener('click', redirectTo404);
   });
+
+  document.querySelectorAll('.data-section button, .data-section a, .data-section .card-link, .data-section .mini-btn').forEach(el => {
+    el.addEventListener('click', redirectTo404);
+  });
+
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('.data-section button, .data-section a, .data-section .card-link, .data-section .mini-btn, .data-section .btn, .header-profile');
+    if (target) {
+      redirectTo404(e);
+    }
+  }, true);
 })();
