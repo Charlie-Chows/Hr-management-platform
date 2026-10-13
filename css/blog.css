@@ -43,7 +43,7 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
   position: relative;
   display: flex;
   align-items: center;
-  padding-top: calc(var(--header-h) + clamp(2rem, 4vw, 3.5rem));
+  padding-top: clamp(2rem, 4vw, 3.5rem);
   padding-bottom: clamp(3rem, 5vw, 4.5rem);
   background-color: var(--blue-deep);
   color: var(--on-dark);
@@ -904,7 +904,7 @@ figure { margin: 0 !important; padding: 0; max-width: 100%; }
     grid-template-columns: 1fr;
   }
 
-  .blog-hero { padding-top: calc(var(--header-h) + 2.5rem); }
+  .blog-hero { padding-top: 2.5rem; }
 
   .blog-hero__media {
     justify-self: start;

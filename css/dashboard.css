@@ -65,7 +65,7 @@ body.dash.nav-open { overflow: hidden; }
 .header-profile .avatar { width: 36px; height: 36px; font-size: .9rem; }
 
 /* ---------- Main ---------- */
-.dash-main { margin-left: var(--sidebar-w); padding: calc(var(--dash-header-h) + 28px) clamp(16px, 3vw, 40px) 48px; }
+.dash-main { margin-left: var(--sidebar-w); padding: calc(var(--dash-header-h) + 28px) clamp(16px, 3vw, 40px) 48px; max-width: 100%; overflow-x: hidden; }
 .data-section { display: none; }
 .data-section.is-active { display: block; animation: sectionIn .5s ease both; }
 .section-title { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 26px; }
@@ -76,6 +76,7 @@ body.dash.nav-open { overflow: hidden; }
 .title-actions .btn { min-height: 44px; padding: 10px 18px; font-size: .82rem; }
 
 .grid { display: grid; gap: 18px; margin-bottom: 18px; }
+.grid > * { min-width: 0; }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
