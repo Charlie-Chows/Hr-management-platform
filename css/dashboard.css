@@ -12,7 +12,8 @@
 }
 html { scroll-padding-top: calc(var(--dash-header-h) + 24px); }
 body.dash { background: var(--color-bg); min-height: 100vh; }
-body.dash.nav-open { overflow: hidden; }
+html:has(body.dash.nav-open),
+body.dash.nav-open { overflow: hidden !important; height: 100vh; height: 100dvh; overscroll-behavior: none; }
 
 /* ---------- Sidebar ---------- */
 .sidebar {
